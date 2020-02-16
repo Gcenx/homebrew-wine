@@ -2,7 +2,7 @@ cask 'wine-crossover' do
 
   version :latest
   sha256 :no_check
-  url ""
+  url "https://github.com/Gcenx/homebrew-wine/releases/download/19.0.1/Wine.Crossover.zip"
 
   name 'Wine Crossover'
   conflicts_with formula: [ 'wine',
