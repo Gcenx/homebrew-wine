@@ -5,18 +5,12 @@ cask 'wine-crossover' do
   url "https://github.com/Gcenx/homebrew-wine/releases/download/19.0.1/Wine.Crossover.zip"
 
   name 'Wine Crossover'
-  conflicts_with formula: [ 'wine',
-                          'winetricks',
-                          ]
+  conflicts_with formula: 'wine',
                  cask:    [
                             'wine-stable',
                             'wine-devel',
                             'wine-staging',
                           ]
-                          
-  depends_on "cabextract"
-  depends_on "p7zip"
-  depends_on "unrar"
 
   app 'Wine Crossover.app'
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/start/bin/appdb"
@@ -42,14 +36,19 @@ cask 'wine-crossover' do
   if MacOS.version >= :catalina
     caveats <<~EOS
       #{token} installs support for running 32 Bit on 64 bit applications in Wine, which is considered experimental.
-      #{token} Requires SIP to be disabled!
-      Use wine32on64 instead of wine.
+      #{token} Requires SIP to be disabled! Use wine32on64 instead of wine.
+      #{token} bundles a patched version of winetricks
+      Install the following packages, cabextract, p7zip & unrar
     EOS
   else
   
   caveats <<~EOS
     #{token} installs support for running 64 bit applications in Wine, which is considered experimental.
     If you do not want 64 bit support, you should download and install the #{token} package manually.
+    #{token} Requires SIP to be disabled! Use wine32on64 instead of wine.
+    #{token} bundles a patched version of winetricks
+    Install the following packages, cabextract, p7zip & unrar
+        EOS
   EOS
   end
 end
