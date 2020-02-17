@@ -6,6 +6,7 @@ Wine-Crossover is within an app bundle like Winehq releases, this doesn't requir
 
 ### Prerequisites;
 Remove `winetricks` if installed as this includes a patched version of winetricks.
+Install the following `cabextract` `p7zip` & `unrar`
 
 ### macOS Catalan additional requirement;
 wine32on64 requires SIP to be disabled or you will receive the following error
