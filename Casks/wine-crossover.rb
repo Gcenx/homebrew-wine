@@ -48,7 +48,6 @@ cask 'wine-crossover' do
     #{token} Requires SIP to be disabled! Use wine32on64 instead of wine.
     #{token} bundles a patched version of winetricks
     Install the following packages, cabextract, p7zip & unrar
-        EOS
   EOS
   end
 end
