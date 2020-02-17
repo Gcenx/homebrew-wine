@@ -12,5 +12,4 @@ Install the following `cabextract` `p7zip` & `unrar`
 wine32on64 requires SIP to be disabled or you will receive the following error
 ```
 wine: failed to initialize: failed to set the LDT entry for 32-bit code segment
-
 ```
