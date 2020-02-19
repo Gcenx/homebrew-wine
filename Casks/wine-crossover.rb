@@ -5,7 +5,7 @@ cask 'wine-crossover' do
   url "https://github.com/Gcenx/homebrew-wine/releases/download/19.0.1/Wine.Crossover.zip"
 
   name 'Wine Crossover'
-  conflicts_with formula: 'wine',
+  conflicts_with formula: 'winetricks',
                  cask:    [
                             'wine-stable',
                             'wine-devel',
@@ -35,19 +35,32 @@ cask 'wine-crossover' do
 
   if MacOS.version >= :catalina
     caveats <<~EOS
-      #{token} installs support for running 32 Bit on 64 bit applications in Wine, which is considered experimental.
+      #{token} supports both 32-bit and 64-bit now. It is compatible with your
+      existing 32-bit wine prefix, but it will now default to 64-bit when you
+      create a new wine prefix. The architecture can be selected using the
+        WINEARCH environment variable which can be set to either win32 or
+      win64.
+    
+      To create a new pure 32-bit prefix, you can run:
+          $ WINEARCH=win32 WINEPREFIX=~/.wine32 winecfg
+      See the Wine FAQ for details: https://wiki.winehq.org/FAQ#Wineprefixes
       #{token} Requires SIP to be disabled! Use wine32on64 instead of wine.
       #{token} bundles a patched version of winetricks
       Install the following packages, cabextract, p7zip & unrar
     EOS
   else
-  
-  caveats <<~EOS
-    #{token} installs support for running 64 bit applications in Wine, which is considered experimental.
-    If you do not want 64 bit support, you should download and install the #{token} package manually.
-    #{token} Requires SIP to be disabled! Use wine32on64 instead of wine.
-    #{token} bundles a patched version of winetricks
-    Install the following packages, cabextract, p7zip & unrar
-  EOS
+    caveats <<~EOS
+        #{token} supports both 32-bit and 64-bit now. It is compatible with your
+        existing 32-bit wine prefix, but it will now default to 64-bit when you
+        create a new wine prefix. The architecture can be selected using the
+          WINEARCH environment variable which can be set to either win32 or
+        win64.
+      
+        To create a new pure 32-bit prefix, you can run:
+            $ WINEARCH=win32 WINEPREFIX=~/.wine32 winecfg
+        See the Wine FAQ for details: https://wiki.winehq.org/FAQ#Wineprefixes
+        #{token} bundles a patched version of winetricks
+        Install the following packages, cabextract, p7zip & unrar
+    EOS
   end
 end
