@@ -5,11 +5,13 @@ Wine-Crossover is within an app bundle like Winehq releases, this doesn't requir
 
 
 ### Prerequisites;
-Remove `winetricks` if installed as this includes a patched version of winetricks.
-Install the following `cabextract` `p7zip` & `unrar`
+Remove `winetricks` if installed as this includes a patched version of winetricks, winetricks requirments `cabextract`, `p7zip` & `unrar` will be installed.
 
 ### macOS Catalan additional requirement;
 wine32on64 requires SIP to be disabled or you will receive the following error
 ```
 wine: failed to initialize: failed to set the LDT entry for 32-bit code segment
 ```
+
+### Additinal custom casks;
+Now also contains `portingkit` & also `unofficial-wineskin` to install both projects, they work but lightly need additinal changes before attempting to get added upstream
