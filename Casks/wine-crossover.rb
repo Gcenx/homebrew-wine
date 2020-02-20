@@ -1,9 +1,10 @@
 cask 'wine-crossover' do
 
-  version :latest
+  version '19.0.1'
+  homepage "https://github.com/Gcenx/homebrew-wine/"
   sha256 :no_check
-  url "https://github.com/Gcenx/homebrew-wine/releases/download/19.0.1/Wine.Crossover.zip"
-
+  
+  url "https://github.com/Gcenx/homebrew-wine/releases/download/#{version}/Wine.Crossover.zip"
   name 'Wine Crossover'
   conflicts_with formula: 'winetricks',
                  cask:    [
@@ -11,6 +12,10 @@ cask 'wine-crossover' do
                             'wine-devel',
                             'wine-staging',
                           ]
+  depends_on macos: '>= :mavericks'
+  depends_on formula: 'cabextract'
+  depends_on formula: 'p7zip'
+  depends_on formula: 'unrar'
 
   app 'Wine Crossover.app'
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/start/bin/appdb"
@@ -46,7 +51,6 @@ cask 'wine-crossover' do
       See the Wine FAQ for details: https://wiki.winehq.org/FAQ#Wineprefixes
       #{token} Requires SIP to be disabled! Use wine32on64 instead of wine.
       #{token} bundles a patched version of winetricks
-      Install the following packages, cabextract, p7zip & unrar
     EOS
   else
     caveats <<~EOS
@@ -60,7 +64,6 @@ cask 'wine-crossover' do
             $ WINEARCH=win32 WINEPREFIX=~/.wine32 winecfg
         See the Wine FAQ for details: https://wiki.winehq.org/FAQ#Wineprefixes
         #{token} bundles a patched version of winetricks
-        Install the following packages, cabextract, p7zip & unrar
     EOS
   end
 end
