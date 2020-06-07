@@ -11,6 +11,9 @@ cask 'wine-crossover' do
                             'wine-stable',
                             'wine-devel',
                             'wine-staging',
+                            'gcenx-wine-stable',
+                            'gcenx-wine-devel',
+                            'gcenx-wine-staging',
                           ]
   depends_on macos: '>= :mavericks'
   depends_on formula: 'cabextract'
