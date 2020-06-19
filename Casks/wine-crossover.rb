@@ -15,7 +15,6 @@ cask 'wine-crossover' do
                             'gcenx-wine-devel',
                             'gcenx-wine-staging',
                           ]
-  depends_on macos: '>= :mavericks'
 
   app 'Wine Crossover.app'
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/start/bin/appdb"

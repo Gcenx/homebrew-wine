@@ -16,7 +16,6 @@ cask 'gcenx-wine-staging' do
                             'gcenx-wine-stable',
                             'gcenx-wine-devel',
                           ]
-  depends_on macos: '>= :mavericks'
 
   app "Wine Staging.app"
   binary "#{appdir}/Wine Staging.app/Contents/Resources/start/bin/appdb"
