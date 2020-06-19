@@ -33,7 +33,6 @@ cask 'wine-crossover' do
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/winemine"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/winepath"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wineserver"
-  binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/explorer"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/winetricks"
 
     caveats <<~EOS
