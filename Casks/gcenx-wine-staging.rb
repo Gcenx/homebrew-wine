@@ -1,8 +1,8 @@
 cask 'gcenx-wine-staging' do
-  version '5.12.1'
+  version '5.13'
   sha256 :no_check
   
-  url "https://github.com/Gcenx/macOS_Wine_builds/releases/download/5.12/wine-staging-#{version}-osx64.tar.gz"
+  url "https://github.com/Gcenx/macOS_Wine_builds/releases/download/#{version}/wine-staging-#{version}-osx64.tar.gz"
   
   name 'Wine-staging'
   homepage 'https://github.com/Gcenx/macOS_Wine_builds'

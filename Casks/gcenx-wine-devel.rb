@@ -1,5 +1,5 @@
 cask 'gcenx-wine-devel' do
-  version '5.12'
+  version '5.13'
   sha256 :no_check
   
   url "https://github.com/Gcenx/macOS_Wine_builds/releases/download/#{version}/wine-devel-#{version}-osx64.tar.gz"
