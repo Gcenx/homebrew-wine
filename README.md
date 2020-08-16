@@ -81,6 +81,7 @@ Download the desired package from [releases](https://github.com/Gcenx/macOS_Wine
 --with-png \
 --with-pthread \
 --without-pulse \
+--without-quicktime \
 --without-sane \
 --with-sdl \
 --with-tiff \
