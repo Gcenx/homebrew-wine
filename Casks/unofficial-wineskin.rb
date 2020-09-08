@@ -8,7 +8,7 @@ cask 'unofficial-wineskin' do
   
   name 'Unofficial Wineskin Winery'
 
-  depends_on macos: '>= :mavericks'
+  #depends_on macos: '>= :mavericks'
   
   app 'Unofficial Wineskin Winery - No compression.app'
 
