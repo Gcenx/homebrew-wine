@@ -1,6 +1,6 @@
 cask 'unofficial-wineskin' do
 
-  version '1.8.4'
+  version '1.8.4.2'
   homepage "https://github.com/Gcenx/WineskinServer/"
   sha256 :no_check
   
