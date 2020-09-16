@@ -1,4 +1,5 @@
 # homebrew-wine
+This repository contains wine related casks/formulas.
 
 ## Currently contains;
 - `gcenx-wine-stable`
@@ -9,13 +10,14 @@
 - `portingkit`
 
 ### gcenx-wine-stable/devel/staging?;
-Currently Winehq is not providing newer wine packages for macOS starting from Wine-5.8, unless there are bugs I usually compile close to release for [Unofficial Wineskin](https://github.com/Gcenx/WineskinServer), it takes a couple extra steps to also package the builds into Winehq like .app bundles.
+As brew doesn't have the ability to override casks/formulas the names were appended with gcenx-
 
-### Requirments;
-The provded gcenx-wine- packages don't have have additinal requirments unless the X11 display drver is required, otherwise all required dependencies are already included within the bundle.
+### Requirements;
+gcenx-wine-* packages don't have additional requirements unless the X11 display driver is required, otherwise all required dependencies are already included.
 
-### macOS Catalan;
-32Bit support was removed from macOS Catalina however `wine-crossover` was built from crossover-wine-19.0.1, this contains `wine32on64` and allows running 32Bit windows bininaries however it has additinal requirments unless your system is running 10.15.4 or greater.
+### macOS Catalan/Big Sur (__Intel systems only__);
+32Bit support was removed however, `wine-crossover` was built from crossover-wine-19.0.1, this contains `wine32on64` and allows running 32Bit windows binaries.\
+macOS Catalina 10.15.4 or later work, macOS Catalina 10.15.0 to 10.15.3 require SIP to be disabled.
 
 ### How to install using brew;
 First add my tap
@@ -23,11 +25,12 @@ First add my tap
 brew tap gcenx/wine
 ```
 
-##### Next select the desired wine package to be installed, for an example I'll select `wine-crossover`
+##### Next select the desired wine package to be installed, for an example let's select `wine-crossover`
 ```
 brew cask install --no-quarantine wine-crossover
 ```
-This will install `Wine Crossover` into `/Applications` and function as the official brew cask would (but _doesn't_ require XQuartz)
+This will install `Wine Crossover` into `/Applications` and function as the official brew cask would (but _doesn't_ require XQuartz)\
+The `--no-quarantine` flag is required so brew skips adding the quarantine mark causing gatekeeper prompts this breaks wine packages on macOS Catalina and later.
 
 #### How to manually install;
 Download the desired package from [releases](https://github.com/Gcenx/macOS_Wine_builds/releases) unpack, now move the `Wine *` bundle to `/Applications` and use as you would a Winehq release.
@@ -112,10 +115,12 @@ Download the desired package from [releases](https://github.com/Gcenx/macOS_Wine
 ```
 
 ## gecko & mono are included;
-`wine-gecko` & `wine-mono` are included within these custom `Wine-*` packages, usually wine(64) will download and then install .msi packages into each and every wineprefix increasing prefix size instead the "shared" packages were used to help reduce prefix size
+`wine-gecko` & `wine-mono` are included within these custom `Wine-*` packages, usually wine(64/32on64) will download and then install .msi packages into each and every wineprefix increasing prefix size instead the "shared" packages are used to reduce prefix size.
 
-## Don't open issues for wine issues!
-Any wine bugs or regressions report those to [Winehq Bugzilla](https://bugs.winehq.org/), for package related issues related to missing dylib or a dylib refusing to load on OS X 10.9 then open an issue so it can be resolved.
+## Don't open wine issues here!;
+Wine bugs/regressions need to be reported via [Winehq Bugzilla](https://bugs.winehq.org/)\
+Packaging related issues should be opened here.\
+As I’m not too familiar with brew any issues with the provided casks/formulas should be reported.
 
 ### Found this helpful?
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/gcenx?locale.x=en_US)
