@@ -10,7 +10,7 @@ cask 'unofficial-wineskin' do
 
   #depends_on macos: '>= :mavericks'
   
-  app 'Wineskin Winery'
+  app 'Wineskin Winery.app'
 
   if MacOS.version >= :catalina
     caveats <<~EOS
