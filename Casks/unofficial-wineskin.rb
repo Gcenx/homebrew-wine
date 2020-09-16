@@ -4,13 +4,13 @@ cask 'unofficial-wineskin' do
   homepage "https://github.com/Gcenx/WineskinServer/"
   sha256 :no_check
   
-  url "https://github.com/Gcenx/WineskinServer/releases/download/V#{version}/Unofficial.Wineskin.Winery.txz"
+  url "https://github.com/Gcenx/WineskinServer/releases/download/V#{version}/Wineskin.Winery.txz"
   
-  name 'Unofficial Wineskin Winery'
+  name 'Wineskin Winery'
 
   #depends_on macos: '>= :mavericks'
   
-  app 'Unofficial Wineskin Winery - No compression.app'
+  app 'Wineskin Winery.app'
 
   if MacOS.version >= :catalina
     caveats <<~EOS
