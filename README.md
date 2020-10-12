@@ -59,7 +59,7 @@ Download the desired package from [releases](https://github.com/Gcenx/macOS_Wine
 --without-fontconfig \
 --with-freetype \
 --with-gcrypt \
---without-gettext \
+--with-gettext \
 --without-gettextpo \
 --without-gphoto \
 --with-glu \
