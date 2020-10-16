@@ -2,11 +2,13 @@ cask 'gcenx-wine-staging' do
   version '5.19'
   sha256 :no_check
   
-  url "https://github.com/Gcenx/macOS_Wine_builds/releases/download/#{version}/wine-staging-#{version}-osx64.tar.gz"
+  url "https://github.com/Gcenx/macOS_Wine_builds/releases/download/#{version}/wine-staging-#{version}-osx64.tar.7z"
   
   name 'Wine-staging'
   homepage 'https://github.com/Gcenx/macOS_Wine_builds'
-
+  
+  depends_on formula: 'p7zip'
+  
   conflicts_with formula: 'wine',
                  cask:    [
                             'wine-stable',
