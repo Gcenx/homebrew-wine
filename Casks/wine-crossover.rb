@@ -1,11 +1,14 @@
 cask 'wine-crossover' do
 
-  version '19.0.1'
+  version '19.0.2'
   homepage "https://github.com/Gcenx/homebrew-wine/"
   sha256 :no_check
   
-  url "https://github.com/Gcenx/homebrew-wine/releases/download/#{version}/wine-crossover-#{version}-osx64.tar.gz"
+  url "https://github.com/Gcenx/homebrew-wine/releases/download/#{version}/wine-crossover-#{version}-osx64.tar.7z"
   name 'Wine Crossover'
+  
+  depends_on formula: 'p7zip'
+  
   conflicts_with formula: 'wine',
                  cask:    [
                             'wine-stable',
@@ -19,7 +22,6 @@ cask 'wine-crossover' do
   app 'Wine Crossover.app'
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/start/bin/appdb"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/start/bin/winehelp"
-  binary "#{appdir}/Wine Crossover.app/Contents/Resources/start/bin/wine"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/msiexec"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/notepad"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/regedit"
@@ -33,7 +35,14 @@ cask 'wine-crossover' do
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/winemine"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/winepath"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wineserver"
-
+  
+  # Link wine32on64 as wine to be consistent, this also gives winetricks compatibility
+  if MacOS.version >= :catalina
+    binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wine32on64", target: "wine"
+  else
+    binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wine"
+  end
+  
     caveats <<~EOS
         #{token} supports both 32-bit and 64-bit now. It is compatible with your
         existing 32-bit wine prefix, but it will now default to 64-bit when you
