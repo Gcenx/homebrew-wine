@@ -36,9 +36,9 @@ cask 'wine-crossover' do
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/winepath"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wineserver"
   
-  # Link wine32on64 as wine to be consistent, this also gives winetricks compatibility
   if MacOS.version >= :catalina
-    binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wine32on64", target: "wine"
+    binary "#{appdir}/Wine Crossover.app/Contents/Resources/start/bin/wine"
+    binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wine32on64"
   else
     binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wine"
   end
