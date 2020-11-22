@@ -7,7 +7,7 @@ cask 'gcenx-wine-staging' do
   name 'Wine-staging'
   homepage 'https://github.com/Gcenx/macOS_Wine_builds'
   
-  depends_on formula: 'p7zip'
+  depends_on formula: 'xz'
   
   conflicts_with formula: 'wine',
                  cask:    [

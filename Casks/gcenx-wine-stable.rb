@@ -6,7 +6,9 @@ cask 'gcenx-wine-stable' do
   
   name 'Wine-stable'
   homepage 'https://github.com/Gcenx/macOS_Wine_builds'
-
+  
+  depends_on formula: 'xz'
+  
   conflicts_with formula: 'wine',
                  cask:    [
                             'wine-stable',
