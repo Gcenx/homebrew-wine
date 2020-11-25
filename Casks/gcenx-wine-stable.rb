@@ -2,7 +2,7 @@ cask 'gcenx-wine-stable' do
   version '5.0.3'
   sha256 :no_check
   
-  url "https://github.com/Gcenx/macOS_Wine_builds/releases/download/#{version}/wine-stable-#{version}-osx64.tar.gz"
+  url "https://github.com/Gcenx/macOS_Wine_builds/releases/download/#{version}/wine-stable-#{version}-osx64.tar.xz"
   
   name 'Wine-stable'
   homepage 'https://github.com/Gcenx/macOS_Wine_builds'

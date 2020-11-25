@@ -2,7 +2,7 @@ cask 'gcenx-wine-devel' do
   version '5.22'
   sha256 :no_check
   
-  url "https://github.com/Gcenx/macOS_Wine_builds/releases/download/#{version}/wine-devel-#{version}-osx64.tar.7z"
+  url "https://github.com/Gcenx/macOS_Wine_builds/releases/download/#{version}/wine-devel-#{version}-osx64.tar.xz"
   
   name 'Wine-devel'
   homepage 'https://github.com/Gcenx/macOS_Wine_builds'
