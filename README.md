@@ -27,7 +27,7 @@ brew tap gcenx/wine
 
 ##### Next select the desired wine package to be installed, for an example let's select `wine-crossover`
 ```
-brew cask install --no-quarantine wine-crossover
+brew install --cask --no-quarantine wine-crossover
 ```
 This will install `Wine Crossover` into `/Applications` and function as the official brew cask would (but _doesn't_ require XQuartz)\
 The `--no-quarantine` flag is required so brew skips adding the quarantine mark causing gatekeeper prompts this breaks wine packages on macOS Catalina and later.
