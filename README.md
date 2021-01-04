@@ -1,6 +1,8 @@
 # homebrew-wine
 This repository contains wine related casks/formulas.
 
+![Downloads count](https://img.shields.io/github/downloads/gcenx/homebrew-wine/total.svg)
+
 ## Currently contains;
 - `gcenx-wine-stable`
 - `gcenx-wine-devel`
