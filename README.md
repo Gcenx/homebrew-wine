@@ -8,6 +8,7 @@ This repository contains wine related casks/formulas.
 - `gcenx-wine-devel`
 - `gcenx-wine-staging`
 - `wine-crossover` 
+- `wine-crossover20.0.2`
 - `unofficial-wineskin`
 - `portingkit`
 
@@ -22,7 +23,7 @@ gcenx-wine-* packages don't have additional requirements unless the X11 display 
 macOS Catalina 10.15.4 or later work, macOS Catalina 10.15.0 to 10.15.3 require SIP to be disabled.
 
 ### Apple Silicon (Rosetta2);
-You can use `wine-crossover` it does function but some older titles like Diablo 2 will need to be ran via cnc-ddraw, glide or force Windowed mode, other games like Total Annihilation will require DxWnd to launch.  Newer titles like Fallout NV/Skyrim LE should run without issue, this also affects crossover-wine-20.0.2 so providing an upgraded package won't help matters at this time.
+You _can_ use `wine-crossover` it does function but some older titles like Diablo 2 will need to be ran via cnc-ddraw, glide or force Windowed mode, other games like Total Annihilation will require DxWnd to launch.  Newer titles like Fallout NV/Skyrim LE should run without issue, this also affects crossover-wine-20.0.2 so providing an upgraded package won't help matters at this time.
 
 ### How to install using brew;
 First add my tap

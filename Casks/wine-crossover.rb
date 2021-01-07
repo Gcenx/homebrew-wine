@@ -17,6 +17,7 @@ cask 'wine-crossover' do
                             'gcenx-wine-stable',
                             'gcenx-wine-devel',
                             'gcenx-wine-staging',
+                            'wine-crossover20.0.0',
                           ]
 
   app 'Wine Crossover.app'
