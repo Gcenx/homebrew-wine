@@ -13,7 +13,7 @@ This repository contains wine related casks/formulas.
 - `portingkit`
 
 ### gcenx-wine-stable/devel/staging?;
-As brew doesn't have the ability to override casks/formulas the names were appended with gcenx-
+As brew doesn't have the ability to override casks/formulas the names were prepended with gcenx-
 
 ### Requirements;
 gcenx-wine-* packages don't have additional requirements unless the X11 display driver is required, otherwise all required dependencies are already included.
