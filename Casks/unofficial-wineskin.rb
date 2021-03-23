@@ -8,13 +8,6 @@ cask 'unofficial-wineskin' do
   
   name 'Wineskin Winery'
 
-  #depends_on macos: '>= :mavericks'
-  
   app 'Wineskin Winery.app'
 
-  if MacOS.version >= :catalina
-    caveats <<~EOS
-      #{token} Requires SIP to be disabled!
-    EOS
-  end
 end
