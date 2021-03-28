@@ -50,7 +50,7 @@ cask 'gcenx-wine-devel' do
     EOS
 
     caveats <<~EOS
-        To enable set the following registry key in your prefix:
+        To enable noflicker set the following registry key in your prefix:
         [HKCU\\Software\\Wine\\Mac Driver]
         "ForceOpenGLBackingStore"="y"
     EOS
