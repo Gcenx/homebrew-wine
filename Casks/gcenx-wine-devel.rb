@@ -1,6 +1,6 @@
 cask 'gcenx-wine-devel' do
-  version '6.4'
-  sha256 :no_check
+  version '6.5'
+  sha256 "54389e7fb186ef8a6942629b9b60f27c514c059bec50f35401a701ac0631912f"
   
   url "https://github.com/Gcenx/macOS_Wine_builds/releases/download/#{version}/wine-devel-#{version}-osx64.tar.xz"
   
@@ -48,4 +48,11 @@ cask 'gcenx-wine-devel' do
             $ WINEARCH=win32 WINEPREFIX=~/.wine32 winecfg
         See the Wine FAQ for details: https://wiki.winehq.org/FAQ#Wineprefixes
     EOS
+
+    caveats <<~EOS
+        To enable set the following registry key in your prefix:
+        [HKCU\\Software\\Wine\\Mac Driver]
+        "ForceOpenGLBackingStore"="y"
+    EOS
+
 end
