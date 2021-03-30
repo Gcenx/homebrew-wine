@@ -1,6 +1,6 @@
 cask 'gcenx-wine-staging' do
-  version '6.4'
-  sha256 :no_check
+  version '6.5'
+  sha256 "4cf409c51237bbd8aad090d87441cbe08464026bc82118ad8cfd74bcbd851d94"
   
   url "https://github.com/Gcenx/macOS_Wine_builds/releases/download/#{version}/wine-staging-#{version}-osx64.tar.xz"
   
@@ -48,4 +48,11 @@ cask 'gcenx-wine-staging' do
             $ WINEARCH=win32 WINEPREFIX=~/.wine32 winecfg
         See the Wine FAQ for details: https://wiki.winehq.org/FAQ#Wineprefixes
     EOS
+
+    caveats <<~EOS
+        To enable noflicker set the following registry key in your prefix:
+        [HKCU\\Software\\Wine\\Mac Driver]
+        "ForceOpenGLBackingStore"="y"
+    EOS
+
 end
