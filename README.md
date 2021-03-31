@@ -8,7 +8,7 @@ This repository contains wine related casks/formulas.
 - `gcenx-wine-devel`
 - `gcenx-wine-staging`
 - `wine-crossover` 
-- `wine-crossover20.0.2`
+- `wine-crossover@19.0.2`
 - `unofficial-wineskin`
 - `portingkit`
 

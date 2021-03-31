@@ -1,8 +1,8 @@
-cask 'wine-crossover' do
+cask 'wine-crossover@19.0.2' do
 
-  version '20.0.2'
+  version '19.0.2'
   homepage "https://github.com/Gcenx/homebrew-wine/"
-  sha256 "b962c9c6abbef5b1244d369bf0858567c1dcef220658e2e625b9a386e267eed2"
+  sha256 "ae0b3054f7787d12323faace5584c4646697e178dd8e160874c316c1632442dc"
   
   url "https://github.com/Gcenx/homebrew-wine/releases/download/#{version}/wine-crossover-#{version}-osx64.tar.xz"
   name 'Wine Crossover'
@@ -19,7 +19,7 @@ cask 'wine-crossover' do
                             'gcenx-wine-stable',
                             'gcenx-wine-devel',
                             'gcenx-wine-staging',
-                            'wine-crossover@19.0.2',
+                            'wine-crossover',
                           ]
 
   app 'Wine Crossover.app'
@@ -40,7 +40,7 @@ cask 'wine-crossover' do
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wineserver"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/start/bin/wine"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wine32on64"
-
+  
     caveats <<~EOS
         #{token} supports both 32-bit and 64-bit now. It is compatible with your
         existing 32-bit wine prefix, but it will now default to 64-bit when you
