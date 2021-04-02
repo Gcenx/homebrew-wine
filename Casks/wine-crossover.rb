@@ -2,7 +2,7 @@ cask 'wine-crossover' do
 
   version '20.0.2'
   homepage "https://github.com/Gcenx/homebrew-wine/"
-  sha256 "b962c9c6abbef5b1244d369bf0858567c1dcef220658e2e625b9a386e267eed2"
+  sha256 "bff6af6174b4334d3fa037337f7538aeabdc079234cdeccc2cfe603d65de899a"
   
   url "https://github.com/Gcenx/homebrew-wine/releases/download/#{version}/wine-crossover-#{version}-osx64.tar.xz"
   name 'Wine Crossover'
