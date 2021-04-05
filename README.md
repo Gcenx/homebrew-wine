@@ -7,8 +7,8 @@ This repository contains wine related casks/formulas.
 - `gcenx-wine-stable`
 - `gcenx-wine-devel`
 - `gcenx-wine-staging`
-- `wine-crossover` 
-- `wine-crossover@19.0.2`
+- `wine-crossover` *(wine-5.0)*
+- `wine-crossover@19.0.2` *(wine-4.12.1)*
 - `unofficial-wineskin`
 - `portingkit`
 
@@ -19,11 +19,11 @@ As brew doesn't have the ability to override casks/formulas the names were prepe
 gcenx-wine-* packages don't have additional requirements unless the X11 display driver is required, otherwise all required dependencies are already included.
 
 ## macOS Catalan and later (Intel systems);
-32Bit support was removed however, `wine-crossover@19.0.2` was built from crossover-wine-19.0.2, this contains `wine32on64` and allows running 32Bit windows binaries.\
+32Bit support was removed however, `wine-crossover` was built from [crossover-sources-20.0.2](https://media.codeweavers.com/pub/crossover/source/crossover-sources-20.0.2.tar.gz) & `wine-crossover@19.0.2` was built from [crossover-sources-19.0.2](https://media.codeweavers.com/pub/crossover/source/crossover-sources-19.0.2.tar.gz) *plus additinal patches*, these contains `wine32on64` this allows running 32Bit windows binaries.\
 macOS Catalina 10.15.4 or later work, macOS Catalina 10.15.0 to 10.15.3 require SIP to be disabled.
 
 ### Apple Silicon (Rosetta2);
-You _can_ use `wine-crossover` it does function but some older titles like Diablo 2 will need to be ran via cnc-ddraw, glide or force Windowed mode, other games like Total Annihilation will require DxWnd to launch.  Newer titles like Fallout NV/Skyrim LE should run without issue.
+While `wine-crossover` does function some older titles like Diablo 2 will need to be ran via cnc-ddraw, glide or force Windowed mode, other games like Total Annihilation will require DxWnd to launch.  Newer titles like Fallout NV/Skyrim LE should run without issue.
 
 ### How to install using brew;
 First add my tap
@@ -125,5 +125,6 @@ Download the desired package from [releases](https://github.com/Gcenx/macOS_Wine
 
 ## Don't open wine issues here!;
 Wine bugs/regressions need to be reported via [Winehq Bugzilla](https://bugs.winehq.org/)\
+This only applies to `gcenx-wine-*` packages and not `wine-crossover` & `wine-crossover@19.0.2`\
 Packaging related issues should be opened here.\
 As I’m not too familiar with brew any issues with the provided casks/formulas should be reported.
