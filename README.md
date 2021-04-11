@@ -46,7 +46,7 @@ Download the desired package from [releases](https://github.com/Gcenx/macOS_Wine
 - XCode 11.3.1
 - MacOSX10.14.sdk (Patched in 32Bit support)
 - Mingw-w64-8.0.0
-- Mingw-gcc-10.2.0
+- Mingw-gcc-10.3.0
 - Mingw-w64-binutils 2.36.1
 - Dependencies are build using macports with [macports-wine](https://github.com/Gcenx/macports-wine)
 - XQuartz-2.7.7 was used for X11
@@ -60,7 +60,7 @@ Download the desired package from [releases](https://github.com/Gcenx/macOS_Wine
 --without-capi \
 --with-cms \
 --with-coreaudio \
---with-cups \
+--without-cups \
 --without-curses \
 --without-dbus \
 --with-faudio \
