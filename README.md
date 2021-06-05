@@ -18,7 +18,7 @@ As brew doesn't have the ability to override casks/formulas the names were prepe
 ### Requirements;
 gcenx-wine-* packages don't have additional requirements unless the X11 display driver is required, otherwise all required dependencies are already included.
 
-## macOS Catalan and later (Intel systems);
+## macOS Catalina and later (Intel systems);
 32Bit support was removed however, `wine-crossover` was built from [crossover-sources-20.0.2](https://media.codeweavers.com/pub/crossover/source/crossover-sources-20.0.2.tar.gz) & `wine-crossover@19.0.2` was built from [crossover-sources-19.0.2](https://media.codeweavers.com/pub/crossover/source/crossover-sources-19.0.2.tar.gz) *plus additinal patches*, these contains `wine32on64` this allows running 32Bit windows binaries.\
 macOS Catalina 10.15.4 or later work, macOS Catalina 10.15.0 to 10.15.3 require SIP to be disabled.
 
