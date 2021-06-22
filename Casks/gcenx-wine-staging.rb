@@ -1,6 +1,6 @@
 cask 'gcenx-wine-staging' do
-  version '6.10'
-  sha256 "d416ff0ad529f3afddf4c9121a83144d658cbacd9277b264ff1abc9ed8d303c9"
+  version '6.11'
+  sha256 "851e3c2b5af906bcd68951f14d73b2ff5901696dc4ca170ba9755ac344c23139"
   
   url "https://github.com/Gcenx/macOS_Wine_builds/releases/download/#{version}/wine-staging-#{version}-osx64.tar.xz"
   
