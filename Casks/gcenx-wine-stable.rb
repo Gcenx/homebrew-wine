@@ -1,6 +1,6 @@
 cask 'gcenx-wine-stable' do
-  version '6.0'
-  sha256 :no_check
+  version '6.0.1'
+  sha256 "33cd52c616b963d054313b5fd3ec7b855623087e3e6da1e340d702ff31f0b0ed"
   
   url "https://github.com/Gcenx/macOS_Wine_builds/releases/download/#{version}/wine-stable-#{version}-osx64.tar.xz"
   
