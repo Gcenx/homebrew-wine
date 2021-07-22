@@ -43,13 +43,12 @@ Download the desired package from [releases](https://github.com/Gcenx/macOS_Wine
 
 ## Build environment configuration;
 - _CodeWeavers custom llvm/clang-8_ (wine32on64 sources only)
-- XCode 11.3.1
+- XCode _v11.3.1_
 - MacOSX10.14.sdk (Patched in 32Bit support)
-- Mingw-w64-9.0.0
-- Mingw-w64-gcc-11.1.0
-- Mingw-w64-binutils 2.36.1
-- Dependencies are build using macports with [macports-wine](https://github.com/Gcenx/macports-wine)
-- XQuartz-2.8.1 was used for X11
+- Mingw-w64 _v9.0.0_
+- Mingw-gcc _v11.1.0_
+- Mingw-binutils _v2.37_
+- XQuartz _v2.8.1_ was used for X11
 - Build system includes fixes for [Bug 49199](https://bugs.winehq.org/show_bug.cgi?id=49199)
 
 ## Configure Options used;
