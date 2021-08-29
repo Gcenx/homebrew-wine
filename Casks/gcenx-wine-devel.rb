@@ -1,6 +1,6 @@
 cask 'gcenx-wine-devel' do
-  version '6.15'
-  sha256 "b5473c459d190b6b73de4315da2fd600fb9f01807b69d26c5e66bf06b8c1f425"
+  version '6.16'
+  sha256 "8680d170c26012acf93adcf0b0477fd0a33000405cbc72a0556e5626cb08a824"
   
   url "https://github.com/Gcenx/macOS_Wine_builds/releases/download/#{version}/wine-devel-#{version}-osx64.tar.xz"
   
