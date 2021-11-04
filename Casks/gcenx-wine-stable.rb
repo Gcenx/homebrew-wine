@@ -22,7 +22,7 @@ cask "gcenx-wine-stable" do
     'wine-devel',
     'wine-staging',
     'wine-crossover',
-    'wine-crossover@19.0.2',
+    'wine-crossover-19',
     'gcenx-wine-devel',
     'gcenx-wine-staging',
   ]

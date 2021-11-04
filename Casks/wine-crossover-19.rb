@@ -1,4 +1,4 @@
-cask 'wine-crossover@19.0.2' do
+cask 'wine-crossover-19' do
 
   version '19.0.2'
   homepage "https://github.com/Gcenx/homebrew-wine/"
