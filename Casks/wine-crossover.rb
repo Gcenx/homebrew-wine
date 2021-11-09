@@ -16,9 +16,6 @@ cask 'wine-crossover' do
                             'wine-stable',
                             'wine-devel',
                             'wine-staging',
-                            'gcenx-wine-stable',
-                            'gcenx-wine-devel',
-                            'gcenx-wine-staging',
                             'wine-crossover-19',
                           ]
 
