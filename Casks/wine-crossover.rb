@@ -1,8 +1,8 @@
 cask 'wine-crossover' do
 
-  version '20.0.2'
+  version '21.0.0'
   homepage "https://github.com/Gcenx/homebrew-wine/"
-  sha256 "bff6af6174b4334d3fa037337f7538aeabdc079234cdeccc2cfe603d65de899a"
+  sha256 "32d4addc1c8d41d562ae160814f9760a44611efa77c834ac043508b998adc7f9"
   
   url "https://github.com/Gcenx/homebrew-wine/releases/download/#{version}/wine-crossover-#{version}-osx64.tar.xz"
   name 'Wine Crossover'
@@ -17,6 +17,7 @@ cask 'wine-crossover' do
                             'wine-devel',
                             'wine-staging',
                             'wine-crossover-19',
+                            'wine-crossover-20',
                           ]
 
   app 'Wine Crossover.app'
