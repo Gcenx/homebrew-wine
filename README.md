@@ -5,7 +5,7 @@ This repository contains wine related casks/formulas.\
 ## Currently contains;
 - `wine-crossover` *(wine-6.0)*
 - `wine-crossover-20` *(wine-5.0)*
-- `wine-crossover-19.0.2` *(wine-4.12.1)*
+- `wine-crossover-19` *(wine-4.12.1)*
 - `unofficial-wineskin`
 - `portingkit`
 
