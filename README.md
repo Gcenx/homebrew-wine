@@ -27,7 +27,7 @@ Use one of the following packages\
 macOS Catalina 10.15.4 or later work, _*macOS Catalina 10.15.0 to 10.15.3 require SIP to be disabled.*_
 
 ### Apple Silicon (Rosetta2);
-While `wine-crossover-20` & `wine-crossover-21` will function some older titles like Diablo 2 will need to be ran via cnc-ddraw, glide or force Windowed mode, other games like Total Annihilation will require DxWnd to launch.  Newer titles like Fallout NV/Skyrim LE should run without issue.\
+While `wine-crossover-20` & `wine-crossover-19` will function some older titles like Diablo 2 will need to be ran via cnc-ddraw, glide or force Windowed mode, other games like Total Annihilation will require DxWnd to launch.  Newer titles like Fallout NV/Skyrim LE should run without issue.\
 _It's preferable to use `wine-crossover` on Apple Silicon to above these issues._
 
 ## Build environment configuration;
