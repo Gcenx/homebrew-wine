@@ -3,6 +3,7 @@ This repository contains wine related casks/formulas.\
 ![Downloads count](https://img.shields.io/github/downloads/gcenx/homebrew-wine/total.svg)
 
 ## Currently contains;
+- `wine-stable-legacy` *(wine-7.0 without [bug 52354](https://bugs.winehq.org/show_bug.cgi?id=52354))*
 - `wine-crossover`    *(wine-6.0 [crossover-sources-21.0.0](https://media.codeweavers.com/pub/crossover/source/crossover-sources-21.0.0.tar.gz))*
 - `wine-crossover-20` *(wine-5.0 [crossover-sources-20.0.2](https://media.codeweavers.com/pub/crossover/source/crossover-sources-20.0.2.tar.gz))*
 - `wine-crossover-19` *(wine-4.2.1 [crossover-sources-19.0.2](https://media.codeweavers.com/pub/crossover/source/crossover-sources-19.0.2.tar.gz))*
