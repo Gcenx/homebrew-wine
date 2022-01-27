@@ -7,8 +7,6 @@ cask 'wine-crossover' do
   url "https://github.com/Gcenx/homebrew-wine/releases/download/#{version}/wine-crossover-#{version}-osx64.tar.xz"
   name 'Wine Crossover'
 
-  depends_on formula: 'xz'
-
   depends_on macos: ">= :catalina"
 
   conflicts_with formula: 'wine',

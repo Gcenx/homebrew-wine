@@ -3,14 +3,12 @@ cask 'wine-crossover-20' do
   version '20.0.2'
   homepage "https://github.com/Gcenx/homebrew-wine/"
   sha256 "bff6af6174b4334d3fa037337f7538aeabdc079234cdeccc2cfe603d65de899a"
-  
+
   url "https://github.com/Gcenx/homebrew-wine/releases/download/#{version}/wine-crossover-#{version}-osx64.tar.xz"
   name 'Wine Crossover'
-  
-  depends_on formula: 'xz'
-  
+
   depends_on macos: ">= :high_sierra"
-  
+
   conflicts_with formula: 'wine',
                  cask:    [
                             'wine-stable',
@@ -45,7 +43,7 @@ cask 'wine-crossover-20' do
         create a new wine prefix. The architecture can be selected using the
           WINEARCH environment variable which can be set to either win32 or
         win64.
-      
+
         To create a new pure 32-bit prefix, you can run:
             $ WINEARCH=win32 WINEPREFIX=~/.wine32 winecfg
         See the Wine FAQ for details: https://wiki.winehq.org/FAQ#Wineprefixes

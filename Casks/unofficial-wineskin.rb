@@ -1,12 +1,11 @@
 cask 'unofficial-wineskin' do
-
   version '1.8.4.2'
-  homepage "https://github.com/Gcenx/WineskinServer/"
   sha256 :no_check
-  
+
   url "https://github.com/Gcenx/WineskinServer/releases/download/V#{version}/Wineskin.Winery.txz"
-  
   name 'Wineskin Winery'
+  desc "Porting tool, to make Windows programs/games into MacOS apps. GUI building, made for ease of use and customization."
+  homepage "https://github.com/Gcenx/WineskinServer/"
 
   app 'Wineskin Winery.app'
 
@@ -15,5 +14,4 @@ cask 'unofficial-wineskin' do
   preflight do
     system_command "/bin/mkdir", args: ["-p", "/Users/#{ENV["USER"]}/Applications/Wineskin"], sudo: false
   end
-
 end
