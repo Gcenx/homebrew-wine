@@ -21,6 +21,9 @@ cask "wine-stable-legacy" do
     "wine-stable",
     "wine-devel",
     "wine-staging",
+    "wine-crossover",
+    "wine-crossover-19",
+    "wine-crossover-20",
   ]
 
   app "Wine Stable.app"

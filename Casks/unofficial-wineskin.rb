@@ -1,13 +1,13 @@
-cask 'unofficial-wineskin' do
-  version '1.8.4.2'
+cask "unofficial-wineskin" do
+  version "1.8.4.2"
   sha256 :no_check
 
   url "https://github.com/Gcenx/WineskinServer/releases/download/V#{version}/Wineskin.Winery.txz"
-  name 'Wineskin Winery'
-  desc "Porting tool, to make Windows programs/games into MacOS apps. GUI building, made for ease of use and customization."
+  name "Wineskin Winery"
+  desc "Porting tool, to make Windows programs/games into native apps"
   homepage "https://github.com/Gcenx/WineskinServer/"
 
-  app 'Wineskin Winery.app'
+  app "Wineskin Winery.app"
 
   # Workaround issue until it's fixed in Winery
   # https://github.com/Gcenx/WineskinServer/issues/96
