@@ -1,17 +1,16 @@
-cask 'portingkit' do
-
+cask "portingkit" do
   version :latest # always get the latest stable version from the provided links
+  sha256 :no_check
+
+  url "https://portingkit.com/pub/portingkit/porting-kit.dmg"
+  name "Porting Kit"
+  desc "Porting tool, to make Windows programs/games into native apps"
   homepage "http://portingkit.com/"
 
-  sha256 :no_check
-  url "https://portingkit.com/pub/portingkit/porting-kit.dmg"
-  name 'Porting Kit'
-  app 'Porting kit.app'
+  app "Porting kit.app"
 
-  auto_updates true
-  
-    caveats <<~EOS
-        With #{token}, you can install Windows games and apps on macOS easily
-        using Wineskin technology!
-    EOS
+  caveats <<~EOS
+    With #{token}, you can install Windows games and apps on macOS easily
+    using Wineskin technology!
+  EOS
 end

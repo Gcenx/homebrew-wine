@@ -1,6 +1,6 @@
 cask "wine-stable-legacy" do
   version "7.0"
-  sha256 :no_check
+  sha256 "54bbc9267b1e7a8dc83c0a9717f76456fefad50b8389547486c6708a31a5d918"
 
   # Current winehq packages are deprecated and these are packages from
   # the new maintainers that will eventually be pushed to Winehq.
@@ -22,7 +22,6 @@ cask "wine-stable-legacy" do
     "wine-devel",
     "wine-staging",
   ]
-  depends_on formula: "xz"
 
   app "Wine Stable.app"
   binary "#{appdir}/Wine Stable.app/Contents/Resources/start/bin/appdb"
