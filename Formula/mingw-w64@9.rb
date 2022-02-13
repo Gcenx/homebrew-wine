@@ -10,6 +10,8 @@ class MingwW64AT9 < Formula
     regex(%r{url=.*?release/mingw-w64[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  keg_only :versioned_formula
+
   # Apple's makeinfo is old and has bugs
   depends_on "texinfo" => :build
 
