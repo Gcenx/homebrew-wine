@@ -4,6 +4,7 @@ cask "wine-crossover" do
 
   url "https://github.com/Gcenx/homebrew-wine/releases/download/#{version}/wine-crossover-#{version}-osx64.tar.xz"
   name "Wine Crossover"
+  desc "Compatibility layer to run Windows applications"
   homepage "https://github.com/Gcenx/homebrew-wine"
 
   depends_on macos: ">= :catalina"
