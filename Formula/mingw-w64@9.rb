@@ -10,6 +10,12 @@ class MingwW64AT9 < Formula
     regex(%r{url=.*?release/mingw-w64[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  bottle do
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/mingw-w64@9-9.0.0"
+    sha256 big_sur:  "f8da3a6433b83cd921aefcf538502bb6b45f465c620c79427c0d6b3bd3a70783"
+    sha256 catalina: "3a9432c63ec6445929ae1f5942c12fb912590c4c7d888fe6b1ec32ebc333d012"
+  end
+
   keg_only :versioned_formula
 
   # Apple's makeinfo is old and has bugs
