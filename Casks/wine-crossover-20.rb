@@ -1,24 +1,23 @@
-cask 'wine-crossover-20' do
-
-  version '20.0.2'
-  homepage "https://github.com/Gcenx/homebrew-wine/"
+cask "wine-crossover-20" do
+  version "20.0.2"
   sha256 "bff6af6174b4334d3fa037337f7538aeabdc079234cdeccc2cfe603d65de899a"
 
   url "https://github.com/Gcenx/homebrew-wine/releases/download/#{version}/wine-crossover-#{version}-osx64.tar.xz"
-  name 'Wine Crossover'
+  name "Wine Crossover"
+  homepage "https://github.com/Gcenx/homebrew-wine"
 
   depends_on macos: ">= :high_sierra"
 
-  conflicts_with formula: 'wine',
-                 cask:    [
-                            'wine-stable',
-                            'wine-devel',
-                            'wine-staging',
-                            'wine-crossover',
-                            'wine-crossover-19',
-                          ]
+  conflicts_with formula: "wine",
+                 cask: [
+                   "wine-stable",
+                   "wine-devel",
+                   "wine-staging",
+                   "wine-crossover",
+                   "wine-crossover-19",
+                 ]
 
-  app 'Wine Crossover.app'
+  app "Wine Crossover.app"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/start/bin/appdb"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/start/bin/winehelp"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/msiexec"
@@ -37,21 +36,15 @@ cask 'wine-crossover-20' do
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/start/bin/wine"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wine32on64"
 
-    caveats <<~EOS
-        #{token} supports both 32-bit and 64-bit now. It is compatible with your
-        existing 32-bit wine prefix, but it will now default to 64-bit when you
-        create a new wine prefix. The architecture can be selected using the
-          WINEARCH environment variable which can be set to either win32 or
-        win64.
+  caveats <<~EOS
+    #{token} supports both 32-bit and 64-bit. It is compatible with an existing
+    32-bit wine prefix, but it will now default to 64-bit when you create a new
+    wine prefix. The architecture can be selected using the WINEARCH environment
+    variable which can be set to either win32 or win64.
 
-        To create a new pure 32-bit prefix, you can run:
-            $ WINEARCH=win32 WINEPREFIX=~/.wine32 winecfg
-        See the Wine FAQ for details: https://wiki.winehq.org/FAQ#Wineprefixes
-    EOS
+    To create a new pure 32-bit prefix, you can run:
+      $ WINEARCH=win32 WINEPREFIX=~/.wine32 winecfg
 
-    caveats <<~EOS
-        To enable noflicker set the following registry key in your prefix:
-        [HKCU\\Software\\Wine\\Mac Driver]
-        "ForceOpenGLBackingStore"="y"
-    EOS
+    See the Wine FAQ for details: https://wiki.winehq.org/FAQ#Wineprefixes
+  EOS
 end
