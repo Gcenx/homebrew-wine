@@ -15,7 +15,6 @@ cask "wine-crossover-19" do
                    wine-crossover
                    wine-crossover-20
                  ]
-  depends_on formula: "xz"
   depends_on macos: ">= :high_sierra"
 
   app "Wine Crossover.app"
