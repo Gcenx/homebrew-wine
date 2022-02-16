@@ -25,6 +25,12 @@ class Wine < Formula
     end
   end
 
+  bottle do
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/wine-7.0"
+    sha256 big_sur:  "63707b2552cad5f68080a91c559153c55965f67187a489af566fabc34456a076"
+    sha256 catalina: "a617290120db9415898c07c7e5f47d854eba0bc7a477585b33ea614f78d20b42"
+  end
+
   depends_on "bison" => :build
   depends_on "gcenx/wine/mingw-w64@9" => :build if Hardware::CPU.intel?
   depends_on "pkg-config" => :build
