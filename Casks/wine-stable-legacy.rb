@@ -17,11 +17,11 @@ cask "wine-stable-legacy" do
     regex(/wine[._-]stable[._-]legacy[._-]v?(\d+(?:\.\d+)+)[._-]osx64\.tar\.xz/i)
   end
 
-  conflicts_with cask: [
-    "wine-stable",
-    "wine-devel",
-    "wine-staging",
-    "wine-crossover",
+  conflicts_with cask: %w[
+    wine-stable
+    wine-devel
+    wine-staging
+    wine-crossover
   ]
 
   app "Wine Stable.app"
