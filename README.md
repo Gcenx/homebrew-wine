@@ -5,8 +5,6 @@ This repository contains wine related casks/formulas.\
 ## Currently contains;
 - `wine-stable-legacy` *(wine-7.0 without [bug 52354](https://bugs.winehq.org/show_bug.cgi?id=52354))*
 - `wine-crossover`    *(wine-6.0 [crossover-sources-21.0.0](https://media.codeweavers.com/pub/crossover/source/crossover-sources-21.0.0.tar.gz))*
-- `wine-crossover-20` *(wine-5.0 [crossover-sources-20.0.2](https://media.codeweavers.com/pub/crossover/source/crossover-sources-20.0.2.tar.gz))*
-- `wine-crossover-19` *(wine-4.2.1 [crossover-sources-19.0.2](https://media.codeweavers.com/pub/crossover/source/crossover-sources-19.0.2.tar.gz))*
 - `unofficial-wineskin`
 - `portingkit`
 
@@ -30,5 +28,5 @@ The `--no-quarantine` flag is required so brew skips the quarantine flag that ca
 `wine-gecko`is included within these custom `wine-crossover` packages, usually wine(64/32on64) will download and then install .msi packages into each and every wineprefix increasing prefix size instead the "shared" packages are used to reduce prefix size.
 
 ## Don't open issues on Winehq!;
-`wine-crossover`, `wine-crossover-20` `wine-crossover-19` are not upstream packages.\
+`wine-crossover`is not an upstream package.\
 As I’m not too familiar with brew any issues with the provided casks/formulas should be reported here.
