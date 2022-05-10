@@ -8,6 +8,7 @@ class Wine < Formula
   desc "Run Windows applications without a copy of Microsoft Window"
   homepage "https://www.winehq.org/"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://source.winehq.org/git/wine.git", branch: "master"
 
   stable do
@@ -32,12 +33,13 @@ class Wine < Formula
   end
 
   depends_on "bison" => :build
-  depends_on "gcenx/wine/mingw-w64@9" => :build if Hardware::CPU.intel?
+  depends_on "mingw-w64" => :build if Hardware::CPU.intel?
   depends_on "pkg-config" => :build
   depends_on "freetype"
   depends_on "gnutls"
   depends_on "gphoto2"
   depends_on "gst-plugins-base"
+  depends_on "gst-plugins-good"
   depends_on "krb5"
   depends_on "molten-vk" if MacOS.version >= :catalina
   depends_on "sdl2"
