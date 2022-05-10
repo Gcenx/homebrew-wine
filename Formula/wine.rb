@@ -9,11 +9,11 @@ class Wine < Formula
   homepage "https://www.winehq.org/"
   license "GPL-2.0-or-later"
   head "https://source.winehq.org/git/wine.git", branch: "master"
+  revision 1
 
   stable do
     url "https://dl.winehq.org/wine/source/7.0/wine-7.0.tar.xz"
     sha256 "5b43e27d5c085cb18f97394e46180310d5eef7c1d91c6895432a3889b2de086b"
-    revision 1
 
     resource "gecko-x86_64" do
       url "https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86_64.tar.xz"
