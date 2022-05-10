@@ -8,8 +8,8 @@ class Wine < Formula
   desc "Run Windows applications without a copy of Microsoft Window"
   homepage "https://www.winehq.org/"
   license "GPL-2.0-or-later"
-  head "https://source.winehq.org/git/wine.git", branch: "master"
   revision 1
+  head "https://source.winehq.org/git/wine.git", branch: "master"
 
   stable do
     url "https://dl.winehq.org/wine/source/7.0/wine-7.0.tar.xz"
