@@ -13,6 +13,7 @@ class Wine < Formula
   stable do
     url "https://dl.winehq.org/wine/source/7.0/wine-7.0.tar.xz"
     sha256 "5b43e27d5c085cb18f97394e46180310d5eef7c1d91c6895432a3889b2de086b"
+    revision 1
 
     resource "gecko-x86_64" do
       url "https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86_64.tar.xz"
@@ -32,12 +33,13 @@ class Wine < Formula
   end
 
   depends_on "bison" => :build
-  depends_on "gcenx/wine/mingw-w64@9" => :build if Hardware::CPU.intel?
+  depends_on "mingw-w64" => :build if Hardware::CPU.intel?
   depends_on "pkg-config" => :build
   depends_on "freetype"
   depends_on "gnutls"
   depends_on "gphoto2"
   depends_on "gst-plugins-base"
+  depends_on "gst-plugins-good"
   depends_on "krb5"
   depends_on "molten-vk" if MacOS.version >= :catalina
   depends_on "sdl2"
