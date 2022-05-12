@@ -16,12 +16,11 @@ This will install `Wine Crossover` into `/Applications` and function as the offi
 The `--no-quarantine` flag is required so brew skips the quarantine flag that causes Gatekeeper to believe `Wine Crossover` is broken.
 
 ## Build environment configuration;
-- CodeWeavers custom llvm/clang-8 _(Required for wine32on64)_
-- XCode _v11.3.1_
+- cctools 973.0.1/ ld64 609/ LLVM 14.0.0
 - MacOSX10.14.sdk (macOS Mojave sysroot)
-- Mingw-w64 _v9.0.0_
-- Mingw-gcc _v11.2.0_
-- Mingw-binutils _v2.37_
+- Mingw-w64 _v10.0.0_
+- Mingw-gcc _v11.3.0_
+- Mingw-binutils _v2.38_
 - Build system includes fixes for [Bug 49199](https://bugs.winehq.org/show_bug.cgi?id=49199)
 
 ## wine-gecko is included;
