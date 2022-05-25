@@ -33,6 +33,7 @@ class Wine < Formula
   depends_on "bison" => :build
   depends_on "mingw-w64" => :build if Hardware::CPU.intel?
   depends_on "pkg-config" => :build
+  depends_on arch: :x86_64
   depends_on "freetype"
   depends_on "gnutls"
   depends_on "gphoto2"
