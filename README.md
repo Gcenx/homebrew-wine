@@ -19,7 +19,7 @@ The `--no-quarantine` flag is required so brew skips the quarantine flag that ca
 - cctools 973.0.1/ ld64 609/ LLVM 14.0.0
 - MacOSX10.14.sdk (macOS Mojave sysroot)
 - Mingw-w64 _v10.0.0_
-- Mingw-gcc _v11.3.0_
+- Mingw-gcc _v12.1.0_
 - Mingw-binutils _v2.38_
 - Build system includes fixes for [Bug 49199](https://bugs.winehq.org/show_bug.cgi?id=49199)
 
