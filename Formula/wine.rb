@@ -3,13 +3,13 @@
 #  - https://wiki.winehq.org/Gecko
 #  - https://wiki.winehq.org/Mono
 # with `GECKO_VERSION` and `MONO_VERSION`, as in:
-#  https://source.winehq.org/git/wine.git/blob/refs/tags/wine-7.0:/dlls/appwiz.cpl/addons.c
+#  https://gitlab.winehq.org/wine/wine/-/blob/wine-7.0/dlls/appwiz.cpl/addons.c
 class Wine < Formula
   desc "Run Windows applications without a copy of Microsoft Window"
   homepage "https://www.winehq.org/"
   license "GPL-2.0-or-later"
   revision 1
-  head "https://source.winehq.org/git/wine.git", branch: "master"
+  head "https://gitlab.winehq.org/wine/wine.git", branch: "master"
 
   stable do
     url "https://dl.winehq.org/wine/source/7.0/wine-7.0.tar.xz"
@@ -38,6 +38,7 @@ class Wine < Formula
   depends_on "freetype"
   depends_on "gnutls"
   depends_on "gphoto2"
+  depends_on "gst-libav"
   depends_on "gst-plugins-base"
   depends_on "gst-plugins-good"
   depends_on "krb5"
@@ -56,6 +57,7 @@ class Wine < Formula
     end
 
     extra_args = []
+    # https://gitlab.winehq.org/wine/wine/-/commit/ebe0fce6e4a2c89ed322b90c78aa9c942d44d3f1
     extra_args << "--with-mingw" if Hardware::CPU.intel? || build.head?
     extra_args << "--with-vulkan" if MacOS.version >= :catalina
 
