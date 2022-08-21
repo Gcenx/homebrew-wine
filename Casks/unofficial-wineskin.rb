@@ -12,6 +12,6 @@ cask "unofficial-wineskin" do
   # Workaround issue until it's fixed in Winery
   # https://github.com/Gcenx/WineskinServer/issues/96
   preflight do
-    system_command "/bin/mkdir", args: ["-p", "/Users/#{ENV["USER"]}/Applications/Wineskin"], sudo: false
+    system_command "/bin/mkdir", args: ["-p", "/Users/#{ENV.fetch["USER"]}/Applications/Wineskin"], sudo: false
   end
 end
