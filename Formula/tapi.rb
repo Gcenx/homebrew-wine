@@ -7,8 +7,6 @@ class Tapi < Formula
 
   depends_on "cmake" => :build
 
-  patch :p0, :DATA
-
   def install
     ENV.cxx11
 
@@ -20,7 +18,6 @@ class Tapi < Formula
       -DLLVM_ENABLE_TERMINFO=OFF
       -DLLVM_INCLUDE_TESTS=OFF
       -DTAPI_FULL_VERSION=#{version}
-      -DTAPI_INCLUDE_DOCS=ON
       -DTAPI_INCLUDE_TESTS=OFF
     ]
     args << "-DPYTHON_EXECUTABLE=/usr/bin/python3" if MacOS.version > :catalina
@@ -30,8 +27,7 @@ class Tapi < Formula
       system "cmake", "-G", "Unix Makefiles", "../src/llvm",
              *args, *std_cmake_args
       system "make", "libtapi", "tapi"
-      system "make", "install-libtapi", "install-tapi-headers", "install-tapi",
-                     "install-tapi-clang-headers", "install-tapi-docs"
+      system "make", "install-libtapi", "install-tapi-headers", "install-tapi"
     end
   end
 
@@ -39,13 +35,3 @@ class Tapi < Formula
     system "#{bin}/tapi", "--version"
   end
 end
-__END__
-diff --git src/llvm/projects/libtapi/CMakeLists.txt src/llvm/projects/libtapi/CMakeLists.txt
-index 8ee6d8138..5daf0a5fb 100644
---- src/llvm/projects/libtapi/CMakeLists.txt
-+++ src/llvm/projects/libtapi/CMakeLists.txt
-@@ -203,3 +203,4 @@ get_property(TAPI_TABLEGEN_TARGETS GLOBAL PROPERTY TAPI_TABLEGEN_TARGETS)
- list(APPEND LLVM_COMMON_DEPENDS ${TAPI_TABLEGEN_TARGETS})
- add_subdirectory(lib)
- add_subdirectory(tools)
-+add_subdirectory(docs)
