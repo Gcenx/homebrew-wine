@@ -5,11 +5,11 @@ class Tapi < Formula
   sha256 "bef360e713852f451383a7f1fdd4abfd17ee2d937778cd757708e52595d77b78"
   license "APSL-2.0"
 
+  keg_only "provided by Xcode CLT"
+
   depends_on "cmake" => :build
 
   def install
-    ENV.cxx11
-
     append_includes = ["-I#{buildpath}/src/llvm/projects/clang/include -I#{buildpath}/build/projects/clang/include"]
 
     args = %W[
