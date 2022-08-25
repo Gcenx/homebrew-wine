@@ -5,6 +5,11 @@ class Tapi < Formula
   sha256 "bef360e713852f451383a7f1fdd4abfd17ee2d937778cd757708e52595d77b78"
   license "APSL-2.0"
 
+  bottle do
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/tapi-1100.0.11"
+    sha256 cellar: :any, big_sur: "7f515685c4768a847f13831c1584624398f17af81bd944ae390093f51754ff7c"
+  end
+
   keg_only "provided by Xcode CLT"
 
   depends_on "cmake" => :build
