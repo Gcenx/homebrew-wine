@@ -6,7 +6,6 @@ class Tapi < Formula
   license "APSL-2.0"
 
   depends_on "cmake" => :build
-  depends_on "make" => :build
 
   patch :p0, :DATA
 
