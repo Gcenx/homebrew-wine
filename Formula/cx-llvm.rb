@@ -9,6 +9,7 @@ class CxLlvm < Formula
 
   bottle do
     root_url "https://github.com/Gcenx/homebrew-wine/releases/download/cx-llvm-8.0_1"
+    sha256 cellar: :any, monterey: "f17db7b039860b57a01f9c013c1871b089885ca9e3a973980c59183de3399365"
     sha256 cellar: :any, big_sur: "8d0cc6f5889fbe1b5244809e469b7ebe7dd7b1d02a2ad87a974bd36459b1fa52"
   end
 
