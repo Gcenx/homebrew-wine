@@ -33,7 +33,7 @@ class Wine < Formula
   end
 
   depends_on "bison" => :build
-  depends_on "mingw-w64" => :build if Hardware::CPU.intel?
+  depends_on "mingw-w64" => :build
   depends_on "pkg-config" => :build
   depends_on arch: :x86_64
   depends_on "freetype"
@@ -57,11 +57,6 @@ class Wine < Formula
       ENV["ac_cv_lib_soname_MoltenVK"] = "#{Formula["molten-vk"].opt_lib}/libMoltenVK.dylib"
     end
 
-    extra_args = []
-    # https://gitlab.winehq.org/wine/wine/-/commit/ebe0fce6e4a2c89ed322b90c78aa9c942d44d3f1
-    extra_args << "--with-mingw" if Hardware::CPU.intel? || build.head?
-    extra_args << "--with-vulkan" if MacOS.version >= :catalina
-
     system "./configure", "--prefix=#{prefix}",
                           "--enable-win64",
                           "--without-alsa",
@@ -80,6 +75,7 @@ class Wine < Formula
                           "--without-inotify",
                           "--with-krb5",
                           "--with-ldap",
+                          "--with-mingw",
                           "--without-netapi",
                           "--with-openal",
                           "--with-opencl",
@@ -95,8 +91,7 @@ class Wine < Formula
                           "--with-usb",
                           "--without-v4l2",
                           "--without-vkd3d",
-                          "--without-x",
-                          *extra_args
+                          "--without-x"
 
     # Avoid homebrew shims on macOS 10.13+ as preloader requires -no_new_main but Xcode10+
     # only allows this option for 10.7 deployment target, homebrew shims force 10.9
