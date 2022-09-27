@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-cask "unofficial-wineskin" do
-  version "1.8.4.2"
-  sha256 :no_check
-=======
 cask 'unofficial-wineskin' do
   version '1.8.4.2'
   sha256 :no_check
@@ -11,7 +6,6 @@ cask 'unofficial-wineskin' do
   name 'Wineskin Winery'
   desc "Porting tool, to make Windows programs/games into MacOS apps. GUI building, made for ease of use and customization."
   homepage "https://github.com/Gcenx/WineskinServer/"
->>>>>>> cd3fe3f (cleanup casks)
 
   url "https://github.com/Gcenx/WineskinServer/releases/download/V#{version}/Wineskin.Winery.txz"
   name "Wineskin Winery"
