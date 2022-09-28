@@ -1,11 +1,9 @@
 class CxLlvm < Formula
   desc "CodeWeavers custom compiler for -mwine32 targets"
   homepage "https://codeweavers.com/"
-  url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.0.0.tar.gz"
-  version "8.0" # based on llvm/clang 8.0
-  sha256 "0855f72b83e32455ddd13d5ec6adf3b4c94edb7213af7ccac345c9cf590af13d"
+  url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.0.1.tar.gz"
+  sha256 "dd30b258494c27207c55548fe85ec32db33848ae18120baabe9aa3d014fb37ba"
   license "NCSA"
-  revision 1
 
   bottle do
     root_url "https://github.com/Gcenx/homebrew-wine/releases/download/cx-llvm-8.0_1"
