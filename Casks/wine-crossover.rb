@@ -2,7 +2,7 @@ cask "wine-crossover" do
   version "21.0.0"
   sha256 "f5fcbe98977cc42ba39813140bcde45e10b9e0bd24da435a6a7227bb62fd0100"
 
-  url "https://github.com/Gcenx/homebrew-wine/releases/download/#{version}/wine-crossover-#{version}-osx64.tar.xz"
+  url "https://github.com/Gcenx/winecx/releases/download/crossover-wine-#{version}/wine-crossover-#{version}-osx64.tar.xz"
   name "Wine Crossover"
   desc "Compatibility layer to run Windows applications"
   homepage "https://github.com/Gcenx/homebrew-wine/"
