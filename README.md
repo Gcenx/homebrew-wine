@@ -13,7 +13,7 @@ This repository contains wine related casks/formulas.\
 - `portingkit`
 - `unofficial-wineskin`
 - `wine-stable-legacy` *(wine-7.0 without [bug 52354](https://bugs.winehq.org/show_bug.cgi?id=52354))*
-- `wine-crossover`    *(wine-6.0 [crossover-sources-21.0.0](https://media.codeweavers.com/pub/crossover/source/crossover-sources-21.0.0.tar.gz))*
+- `wine-crossover`    *(wine-7.7 [crossover-sources-22.0.1](https://media.codeweavers.com/pub/crossover/source/crossover-sources-21.0.1.tar.gz))*
 
 ### Install the desired wine-crossover package;
 ```
