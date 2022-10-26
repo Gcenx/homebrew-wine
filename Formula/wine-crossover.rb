@@ -5,6 +5,11 @@ class WineCrossover < Formula
   sha256 "138ee0d3c2232b6ef28d50a3efd43c2565e3b813838c6a4e32c8c5c024b5d17f"
   license "GPL-2.0-or-later"
 
+  bottle do
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/wine-crossover-21.2.0"
+    sha256 big_sur: "f2322cee29c769e0be53f8339d7fbb13171a899063ef0a1e2ede2a5ef319222a"
+  end
+
   depends_on "bison" => :build
   depends_on "cx-llvm" => :build
   depends_on "mingw-w64" => :build
