@@ -11,7 +11,7 @@ class Wine < Formula
   head "https://gitlab.winehq.org/wine/wine.git", branch: "master"
 
   stable do
-    url "https://dl.winehq.org/wine/source/7.0.1/wine-7.0.1.tar.xz"
+    url "https://dl.winehq.org/wine/source/7.0/wine-7.0.1.tar.xz"
     sha256 "5b43e27d5c085cb18f97394e46180310d5eef7c1d91c6895432a3889b2de086b"
 
     resource "gecko-x86_64" do
