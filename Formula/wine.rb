@@ -12,7 +12,7 @@ class Wine < Formula
 
   stable do
     url "https://dl.winehq.org/wine/source/7.0/wine-7.0.1.tar.xz"
-    sha256 "5b43e27d5c085cb18f97394e46180310d5eef7c1d91c6895432a3889b2de086b"
+    sha256 "807caa78121b16250f240d2828a07ca4e3c609739e5524ef0f4cf89ae49a816c"
 
     resource "gecko-x86_64" do
       url "https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86_64.tar.xz"
