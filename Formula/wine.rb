@@ -26,8 +26,8 @@ class Wine < Formula
   end
 
   bottle do
-    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/wine-7.0_2"
-    sha256 big_sur: "06a5377e0fba1b055f7dca6c9ba265f45de3d83866f241220ecb9677a55ab54e"
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/wine-7.0.1"
+    sha256 big_sur: "5ba6061a6c5c122ad6c71a732b13e4c5451ee3856b64944a91ca6b72a0167005"
   end
 
   depends_on "bison" => :build
