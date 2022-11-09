@@ -3,17 +3,16 @@
 #  - https://wiki.winehq.org/Gecko
 #  - https://wiki.winehq.org/Mono
 # with `GECKO_VERSION` and `MONO_VERSION`, as in:
-#  https://gitlab.winehq.org/wine/wine/-/blob/wine-7.0/dlls/appwiz.cpl/addons.c
+#  https://gitlab.winehq.org/wine/wine/-/blob/wine-7.0.1/dlls/appwiz.cpl/addons.c
 class Wine < Formula
   desc "Run Windows applications without a copy of Microsoft Window"
   homepage "https://www.winehq.org/"
   license "GPL-2.0-or-later"
-  revision 2
   head "https://gitlab.winehq.org/wine/wine.git", branch: "master"
 
   stable do
-    url "https://dl.winehq.org/wine/source/7.0/wine-7.0.tar.xz"
-    sha256 "5b43e27d5c085cb18f97394e46180310d5eef7c1d91c6895432a3889b2de086b"
+    url "https://dl.winehq.org/wine/source/7.0/wine-7.0.1.tar.xz"
+    sha256 "807caa78121b16250f240d2828a07ca4e3c609739e5524ef0f4cf89ae49a816c"
 
     resource "gecko-x86_64" do
       url "https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86_64.tar.xz"
