@@ -23,10 +23,15 @@ class WineCrossoverAT20 < Formula
 
   uses_from_macos "flex" => :build
 
-  # resource "gecko-x86_64" do
-  #  url "https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86_64.tar.xz"
-  #  sha256 "b4476706a4c3f23461da98bed34f355ff623c5d2bb2da1e2fa0c6a310bc33014"
-  # end
+  resource "gecko-x86" do
+    url "https://dl.winehq.org/wine/wine-gecko/2.47.1/wine-gecko-2.47.1-x86.msi"
+    sha256 "b4476706a4c3f23461da98bed34f355ff623c5d2bb2da1e2fa0c6a310bc33014"
+  end
+
+  resource "gecko-x86_64" do
+    url "https://dl.winehq.org/wine/wine-gecko/2.47.1/wine-gecko-2.47.1-x86_64.msi"
+    sha256 "b4476706a4c3f23461da98bed34f355ff623c5d2bb2da1e2fa0c6a310bc33014"
+  end
 
   patch :DATA
 
@@ -136,12 +141,10 @@ class WineCrossoverAT20 < Formula
                                "LD=/usr/bin/ld"
         system "make", "install-lib"
       end
+      (pkgshare/"gecko").install resource("gecko-x86")
+      (pkgshare/"gecko").install resource("gecko-x86_64")
     end
   end
-
-  # def post_install
-  #  (share/"wine"/"gecko"/"wine-gecko-2.47.2-x86_64").install resource("gecko-x86_64")
-  # end
 
   test do
     system bin/"wine64", "--version"
