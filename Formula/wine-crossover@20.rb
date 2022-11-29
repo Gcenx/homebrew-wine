@@ -30,7 +30,7 @@ class WineCrossoverAT20 < Formula
 
   resource "gecko-x86_64" do
     url "https://dl.winehq.org/wine/wine-gecko/2.47.1/wine-gecko-2.47.1-x86_64.msi"
-    sha256 "b4476706a4c3f23461da98bed34f355ff623c5d2bb2da1e2fa0c6a310bc33014"
+    sha256 "69312e79a988da3e7d292382005e92bc4d4b2a52a23c34440ae3007feb57474a"
   end
 
   patch :DATA
@@ -87,7 +87,7 @@ class WineCrossoverAT20 < Formula
                                "CC=#{Formula["cx-llvm"].opt_bin/"clang"}",
                                "CXX=#{Formula["cx-llvm"].opt_bin/"clang++"}",
                                "LD=/usr/bin/ld"
-        system "make", "install-lib"
+        system "make", "install"
       end
 
       mkdir "wine-32-build" do
@@ -139,7 +139,7 @@ class WineCrossoverAT20 < Formula
                                "CC=#{Formula["cx-llvm"].opt_bin/"clang"}",
                                "CXX=#{Formula["cx-llvm"].opt_bin/"clang++"}",
                                "LD=/usr/bin/ld"
-        system "make", "install-lib"
+        system "make", "install"
       end
       (pkgshare/"gecko").install resource("gecko-x86")
       (pkgshare/"gecko").install resource("gecko-x86_64")
