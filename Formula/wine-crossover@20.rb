@@ -25,7 +25,7 @@ class WineCrossoverAT20 < Formula
 
   resource "gecko-x86" do
     url "https://dl.winehq.org/wine/wine-gecko/2.47.1/wine-gecko-2.47.1-x86.msi"
-    sha256 "b4476706a4c3f23461da98bed34f355ff623c5d2bb2da1e2fa0c6a310bc33014"
+    sha256 "f00b0e2892404827e8ce6811dedfc25ae699a09955bb3df1bbb31753e51da051"
   end
 
   resource "gecko-x86_64" do
