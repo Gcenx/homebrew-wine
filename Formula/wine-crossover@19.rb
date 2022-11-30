@@ -5,6 +5,11 @@ class WineCrossoverAT19 < Formula
   sha256 "4647594cf21fe926e619001f49e38e9da149b0c89b0b948a0a4abce2a94dbaac"
   license "GPL-2.0-or-later"
 
+  bottle do
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/wine-crossover@19-19.0.2"
+    sha256 big_sur: "2ea5e998d28a67a36e543a08e4ecb1ea07470f5f414b4e45ec33f652a48b6a9b"
+  end
+
   keg_only :versioned_formula
 
   depends_on "bison" => :build
