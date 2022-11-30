@@ -2,7 +2,7 @@ class WineCrossoverAT19 < Formula
   desc "Run Windows applications without a copy of Microsoft Window"
   homepage "https://www.winehq.org/"
   url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-19.0.2.tar.gz"
-  sha256 "3b8a361f5d63952d21caafd74e849a774994822fb96c5922b01d554f1677643a"
+  sha256 "4647594cf21fe926e619001f49e38e9da149b0c89b0b948a0a4abce2a94dbaac"
   license "GPL-2.0-or-later"
 
   keg_only :versioned_formula
