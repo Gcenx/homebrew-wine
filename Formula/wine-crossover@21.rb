@@ -6,8 +6,8 @@ class WineCrossoverAT21 < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/wine-crossover-21.2.0"
-    sha256 big_sur: "f2322cee29c769e0be53f8339d7fbb13171a899063ef0a1e2ede2a5ef319222a"
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/wine-crossover@21-21.2.0"
+    sha256 big_sur: "d9cbd9643c2f062d9d41b5c8c8cf469c22bd84426704f3c893ce68e082e7b583"
   end
 
   keg_only :versioned_formula
