@@ -3,6 +3,9 @@ This repository contains wine related casks/formulas.\
 ![Downloads count](https://img.shields.io/github/downloads/gcenx/homebrew-wine/total.svg)
 
 ## formulas;
+- `wine-crossover@19` *(wine-4.12.1 [crossover-sources-19.0.2](https://media.codeweavers.com/pub/crossover/source/crossover-sources-19.0.2.tar.gz))*
+- `wine-crossover@20` *(wine-5.0 [crossover-sources-20.0.4](https://media.codeweavers.com/pub/crossover/source/crossover-sources-20.0.4.tar.gz))*
+- `wine-crossover@21` *(wine-6.0 [crossover-sources-21.2.0](https://media.codeweavers.com/pub/crossover/source/crossover-sources-21.2.0.tar.gz))*
 - `cx-llvm`     *(custom llvm|clang-8 toolchain for -mwine32 targets)*
 - `tapi`        *(Apple tapi-1100.0.11)*
 - `mingw-w64@9`

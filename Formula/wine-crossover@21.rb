@@ -1,4 +1,4 @@
-class WineCrossover < Formula
+class WineCrossoverAT21 < Formula
   desc "Run Windows applications without a copy of Microsoft Window"
   homepage "https://www.winehq.org/"
   url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-21.2.0.tar.gz"
@@ -9,6 +9,8 @@ class WineCrossover < Formula
     root_url "https://github.com/Gcenx/homebrew-wine/releases/download/wine-crossover-21.2.0"
     sha256 big_sur: "f2322cee29c769e0be53f8339d7fbb13171a899063ef0a1e2ede2a5ef319222a"
   end
+
+  keg_only :versioned_formula
 
   depends_on "bison" => :build
   depends_on "cx-llvm" => :build
