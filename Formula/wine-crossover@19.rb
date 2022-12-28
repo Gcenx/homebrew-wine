@@ -1,14 +1,16 @@
-class WineCrossover < Formula
+class WineCrossoverAT19 < Formula
   desc "Run Windows applications without a copy of Microsoft Window"
   homepage "https://www.winehq.org/"
-  url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-21.2.0.tar.gz"
-  sha256 "138ee0d3c2232b6ef28d50a3efd43c2565e3b813838c6a4e32c8c5c024b5d17f"
+  url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-19.0.2.tar.gz"
+  sha256 "4647594cf21fe926e619001f49e38e9da149b0c89b0b948a0a4abce2a94dbaac"
   license "GPL-2.0-or-later"
 
   bottle do
-    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/wine-crossover-21.2.0"
-    sha256 big_sur: "f2322cee29c769e0be53f8339d7fbb13171a899063ef0a1e2ede2a5ef319222a"
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/wine-crossover@19-19.0.2"
+    sha256 big_sur: "2ea5e998d28a67a36e543a08e4ecb1ea07470f5f414b4e45ec33f652a48b6a9b"
   end
+
+  keg_only :versioned_formula
 
   depends_on "bison" => :build
   depends_on "cx-llvm" => :build
@@ -26,16 +28,21 @@ class WineCrossover < Formula
 
   uses_from_macos "flex" => :build
 
+  resource "gecko-x86" do
+    url "https://dl.winehq.org/wine/wine-gecko/2.47/wine_gecko-2.47-x86.msi"
+    sha256 "3b8a361f5d63952d21caafd74e849a774994822fb96c5922b01d554f1677643a"
+  end
+
   resource "gecko-x86_64" do
-    url "https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86_64.tar.xz"
-    sha256 "b4476706a4c3f23461da98bed34f355ff623c5d2bb2da1e2fa0c6a310bc33014"
+    url "https://dl.winehq.org/wine/wine-gecko/2.47/wine_gecko-2.47-x86_64.msi"
+    sha256 "c565ea25e50ea953937d4ab01299e4306da4a556946327d253ea9b28357e4a7d"
   end
 
   patch :DATA
 
   def install
-    ENV["CFLAGS"] = "-g -O2"
-    ENV["CROSSCFLAGS"] = "-g -O2"
+    ENV["CFLAGS"] = "-g -O2 -Wno-deprecated-declarations -Wno-format"
+    ENV["CROSSCFLAGS"] = "-g -O2 -fcommon -fno-builtin-{sin,cos}{,f}"
     ENV["MACOSX_DEPLOYMENT_TARGET"] = "10.14"
 
     cd "wine" do
@@ -85,7 +92,7 @@ class WineCrossover < Formula
                                "CC=#{Formula["cx-llvm"].opt_bin/"clang"}",
                                "CXX=#{Formula["cx-llvm"].opt_bin/"clang++"}",
                                "LD=/usr/bin/ld"
-        system "make", "install-lib"
+        system "make", "install"
       end
 
       mkdir "wine-32-build" do
@@ -131,17 +138,17 @@ class WineCrossover < Formula
                                "--without-v4l2",
                                "--without-vkd3d",
                                "--without-vulkan",
+                               "--disable-vulkan_1",
+                               "--disable-winevulkan",
                                "--without-x",
                                "CC=#{Formula["cx-llvm"].opt_bin/"clang"}",
                                "CXX=#{Formula["cx-llvm"].opt_bin/"clang++"}",
                                "LD=/usr/bin/ld"
-        system "make", "install-lib"
+        system "make", "install"
       end
+      (pkgshare/"gecko").install resource("gecko-x86")
+      (pkgshare/"gecko").install resource("gecko-x86_64")
     end
-  end
-
-  def post_install
-    (share/"wine"/"gecko"/"wine-gecko-2.47.2-x86_64").install resource("gecko-x86_64")
   end
 
   test do

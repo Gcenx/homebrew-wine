@@ -1,8 +1,8 @@
 class Winetricks < Formula
   desc "Automatic workarounds for problems in Wine"
   homepage "https://github.com/Winetricks/winetricks"
-  url "https://github.com/The-Wineskin-Project/winetricks/archive/20221022.tar.gz"
-  sha256 "ee2e2fc125248433294456376ddffb20b1722b80728c6b329df6a0c1521e5661"
+  url "https://github.com/The-Wineskin-Project/winetricks/archive/20221108.tar.gz"
+  sha256 "e2e9a9ed15306c5e80a9d2961069f278a82bebd7a4b89ffedbba86f7fa475c42"
   license "LGPL-2.1-or-later"
   head "https://github.com/The-Wineskin-Project/winetricks.git", branch: "macOS"
 
@@ -12,8 +12,8 @@ class Winetricks < Formula
   end
 
   bottle do
-    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/winetricks-20221022"
-    sha256 cellar: :any_skip_relocation, big_sur: "69b0b05ed069ce4760ca1f0b34ec42bebb72684853bf2bbfb0fc5cd6e0948308"
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/winetricks-20221108"
+    sha256 cellar: :any_skip_relocation, big_sur: "44a6a7589e039f94ec4d6d45e328eb18bc342e1688be6c834eb53abda931323c"
   end
 
   depends_on "cabextract"
