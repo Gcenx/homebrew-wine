@@ -7,6 +7,9 @@ This repository contains wine related casks/formulas.\
 - `tapi`        *(Apple tapi-1100.0.11)*
 - `wine`        *(wine-7.0)*
 - `winetricks`  *(20221108)*
+- `wine-crossover@19` *(wine-4.12.1)*
+- `wine-crossover@20` *(wine-5.0)*
+- `wine-crossover@21` *(wine-6.0)*
 
 ### To install the `winetricks` package;
 ```
