@@ -3,7 +3,7 @@
 #  - https://wiki.winehq.org/Gecko
 #  - https://wiki.winehq.org/Mono
 # with `GECKO_VERSION` and `MONO_VERSION`, as in:
-#  https://gitlab.winehq.org/wine/wine/-/blob/wine-7.0.1/dlls/appwiz.cpl/addons.c
+#  https://gitlab.winehq.org/wine/wine/-/blob/wine-8.0/dlls/appwiz.cpl/addons.c
 class Wine < Formula
   desc "Run Windows applications without a copy of Microsoft Window"
   homepage "https://www.winehq.org/"
@@ -11,16 +11,21 @@ class Wine < Formula
   head "https://gitlab.winehq.org/wine/wine.git", branch: "master"
 
   stable do
-    url "https://dl.winehq.org/wine/source/7.0/wine-7.0.1.tar.xz"
-    sha256 "807caa78121b16250f240d2828a07ca4e3c609739e5524ef0f4cf89ae49a816c"
+    url "https://dl.winehq.org/wine/source/8.0/wine-8.0.tar.xz"
+    sha256 "0272c20938f8721ae4510afaa8b36037457dd57661e4d664231079b9e91c792e"
+
+    resource "gecko-x86" do
+      url "https://dl.winehq.org/wine/wine-gecko/2.47.3/wine-gecko-2.47.3-x86.tar.xz"
+      sha256 "b4476706a4c3f23461da98bed34f355ff623c5d2bb2da1e2fa0c6a310bc33014"
+    end
 
     resource "gecko-x86_64" do
-      url "https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86_64.tar.xz"
+      url "https://dl.winehq.org/wine/wine-gecko/2.47.3/wine-gecko-2.47.3-x86_64.tar.xz"
       sha256 "b4476706a4c3f23461da98bed34f355ff623c5d2bb2da1e2fa0c6a310bc33014"
     end
 
     resource "mono" do
-      url "https://dl.winehq.org/wine/wine-mono/7.0.0/wine-mono-7.0.0-x86.tar.xz"
+      url "https://dl.winehq.org/wine/wine-mono/7.4.0/wine-mono-7.4.0-x86.tar.xz"
       sha256 "2a047893f047b4f0f5b480f1947b7dda546cee3fec080beb105bf5759c563cd3"
     end
   end
@@ -56,6 +61,7 @@ class Wine < Formula
     end
 
     system "./configure", "--prefix=#{prefix}",
+                          "--enable-archs=i386,x86_64"'
                           "--enable-win64",
                           "--without-alsa",
                           "--without-capi",
@@ -72,10 +78,8 @@ class Wine < Formula
                           "--with-gstreamer",
                           "--without-inotify",
                           "--with-krb5",
-                          "--with-ldap",
                           "--with-mingw",
                           "--without-netapi",
-                          "--with-openal",
                           "--with-opencl",
                           "--with-opengl",
                           "--without-oss",
@@ -88,7 +92,6 @@ class Wine < Formula
                           "--with-unwind",
                           "--with-usb",
                           "--without-v4l2",
-                          "--without-vkd3d",
                           "--without-x"
 
     # Avoid homebrew shims on macOS 10.13+ as preloader requires -no_new_main but Xcode10+
@@ -104,8 +107,9 @@ class Wine < Formula
 
   if build.stable?
     def post_install
-      (pkgshare/"gecko"/"wine-gecko-2.47.2-x86_64").install resource("gecko-x86_64")
-      (pkgshare/"mono"/"wine-mono-7.0.0").install resource("mono")
+      (pkgshare/"gecko"/"wine-gecko-2.47.3-x86").install resource("gecko-x86")
+      (pkgshare/"gecko"/"wine-gecko-2.47.3-x86_64").install resource("gecko-x86_64")
+      (pkgshare/"mono"/"wine-mono-7.4.0").install resource("mono")
     end
   end
 
