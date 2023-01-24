@@ -114,6 +114,6 @@ class Wine < Formula
   end
 
   test do
-    system bin/"wine64", "--version"
+    system bin/"wine", "--version"
   end
 end
