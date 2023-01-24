@@ -61,7 +61,7 @@ class Wine < Formula
     end
 
     system "./configure", "--prefix=#{prefix}",
-                          "--enable-archs=i386,x86_64"'
+                          "--enable-archs=i386,x86_64",
                           "--enable-win64",
                           "--without-alsa",
                           "--without-capi",
