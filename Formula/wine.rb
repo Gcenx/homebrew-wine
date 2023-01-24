@@ -16,17 +16,17 @@ class Wine < Formula
 
     resource "gecko-x86" do
       url "https://dl.winehq.org/wine/wine-gecko/2.47.3/wine-gecko-2.47.3-x86.tar.xz"
-      sha256 "b4476706a4c3f23461da98bed34f355ff623c5d2bb2da1e2fa0c6a310bc33014"
+      sha256 "08d318f3dd6440a8a777cf044ccab039b0d9c8809991d2180eb3c9f903135db3"
     end
 
     resource "gecko-x86_64" do
       url "https://dl.winehq.org/wine/wine-gecko/2.47.3/wine-gecko-2.47.3-x86_64.tar.xz"
-      sha256 "b4476706a4c3f23461da98bed34f355ff623c5d2bb2da1e2fa0c6a310bc33014"
+      sha256 "0beac419c20ee2e68a1227b6e3fa8d59fec0274ed5e82d0da38613184716ef75"
     end
 
     resource "mono" do
       url "https://dl.winehq.org/wine/wine-mono/7.4.0/wine-mono-7.4.0-x86.tar.xz"
-      sha256 "2a047893f047b4f0f5b480f1947b7dda546cee3fec080beb105bf5759c563cd3"
+      sha256 "9249ece664bcf2fecb1308ea1d2542c72923df9fe3df891986f137b2266a9ba3"
     end
   end
 
