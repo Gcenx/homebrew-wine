@@ -60,7 +60,7 @@ class Wine < Formula
       ENV["ac_cv_lib_soname_MoltenVK"] = "#{Formula["molten-vk"].opt_lib}/libMoltenVK.dylib"
     end
 
-    system "./configure", "--prefix=#{prefix}",
+    system "./configure", "--prefix/",
                           "--enable-archs=i386,x86_64",
                           "--enable-win64",
                           "--without-alsa",
@@ -99,9 +99,9 @@ class Wine < Formula
     # ld: dynamic main executables must link with libSystem.dylib for architecture
     # https://source.winehq.org/git/wine.git/commit/0185ee5d99e8dca2c69d61ba0c0e00256beaf1b5
     if MacOS.version >= 10.13
-      system "make", "install", "CC=/usr/bin/clang", "CXX=/usr/bin/clang++", "LD=/usr/bin/ld"
+      system "make", "install", "CC=/usr/bin/clang", "CXX=/usr/bin/clang++", "LD=/usr/bin/ld", "DESTDIR=#{prefix}"
     else
-      system "make", "install"
+      system "make", "install", "DESTDIR=#{prefix}"
     end
   end
 
