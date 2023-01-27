@@ -60,7 +60,7 @@ class Wine < Formula
       ENV["ac_cv_lib_soname_MoltenVK"] = "#{Formula["molten-vk"].opt_lib}/libMoltenVK.dylib"
     end
 
-    system "./configure", "--prefix/",
+    system "./configure", "--prefix=/",
                           "--enable-archs=i386,x86_64",
                           "--enable-win64",
                           "--without-alsa",
