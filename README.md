@@ -5,7 +5,6 @@ This repository contains wine related casks/formulas.\
 ## formulas;
 - `cx-llvm`     *(custom llvm|clang-8 toolchain for -mwine32 targets)*
 - `tapi`        *(Apple tapi-1100.0.11)*
-- `wine`        *(wine-7.0)*
 - `winetricks`  *(20221108)*
 - `wine-crossover@19` *(wine-4.12.1)*
 - `wine-crossover@20` *(wine-5.0)*
