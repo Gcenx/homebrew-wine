@@ -23,8 +23,6 @@ cask "wine-crossover" do
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/notepad"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/regedit"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/regsvr32"
-  binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wine64", target: "wine"
-  binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wine64-preloader", target: "wine-preloader"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wine64"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wine64-preloader"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wineboot"
