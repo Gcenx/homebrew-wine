@@ -1,6 +1,6 @@
 cask "wine-crossover" do
   version "22.0.1"
-  sha256 "989323c27334375429a492c5cce239259b7206b0d2cd456e3ba3ce159e8486c4"
+  sha256 "04b93251b7083e4d0e3ff0ec7353a1b753225d6fccf36019a1f197e7540900c4"
 
   url "https://github.com/Gcenx/winecx/releases/download/crossover-wine-#{version}/wine-crossover-#{version}-osx64.tar.xz"
   name "Wine Crossover"
@@ -23,6 +23,8 @@ cask "wine-crossover" do
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/notepad"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/regedit"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/regsvr32"
+  binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wine"
+  binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wine-preloader"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wine64"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wine64-preloader"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wineboot"
