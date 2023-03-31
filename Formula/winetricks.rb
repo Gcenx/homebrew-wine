@@ -2,7 +2,7 @@ class Winetricks < Formula
   desc "Automatic workarounds for problems in Wine"
   homepage "https://github.com/Winetricks/winetricks"
   url "https://github.com/The-Wineskin-Project/winetricks/archive/20230331.tar.gz"
-  sha256 "e2e9a9ed15306c5e80a9d2961069f278a82bebd7a4b89ffedbba86f7fa475c42"
+  sha256 "b11c052461b019ee7eba6555a606c4e744227fe74d2bb484f14cf2b984d1e599"
   license "LGPL-2.1-or-later"
   head "https://github.com/The-Wineskin-Project/winetricks.git", branch: "macOS"
 
