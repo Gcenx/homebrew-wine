@@ -22,7 +22,7 @@ _The custom `winetricks` verb uses my fork that's aimed at macOS_
 - `portingkit`
 - `unofficial-wineskin`
 - `wine-stable-legacy` *(wine-7.0 without [bug 52354](https://bugs.winehq.org/show_bug.cgi?id=52354))*
-- `wine-crossover`     *(wine-7.7 [crossover-sources-22.0.1](https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.0.1.tar.gz))*
+- `wine-crossover`     *(wine-7.7 [crossover-sources-22.1.0](https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.0.tar.gz))*
 
 ### To install the `wine-crossover` package;
 ```

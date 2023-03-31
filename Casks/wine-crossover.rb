@@ -1,6 +1,6 @@
 cask "wine-crossover" do
-  version "22.0.1"
-  sha256 "04b93251b7083e4d0e3ff0ec7353a1b753225d6fccf36019a1f197e7540900c4"
+  version "22.1.0"
+  sha256 "4a6375e43c2e674a55b746efb3d86b096cf9065a9aebfaa05b42a08ed02a46a0"
 
   url "https://github.com/Gcenx/winecx/releases/download/crossover-wine-#{version}/wine-crossover-#{version}-osx64.tar.xz"
   name "Wine Crossover"
