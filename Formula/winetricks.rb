@@ -16,9 +16,9 @@ class Winetricks < Formula
     sha256 cellar: :any_skip_relocation, big_sur: "44a6a7589e039f94ec4d6d45e328eb18bc342e1688be6c834eb53abda931323c"
   end
 
-  depends_on "cabextract"
-  depends_on "p7zip"
-  depends_on "unzip"
+  depends_on "core/cabextract"
+  depends_on "core/p7zip"
+  depends_on "core/unzip"
 
   def install
     bin.install "src/winetricks"
