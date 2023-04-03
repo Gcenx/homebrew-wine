@@ -12,8 +12,8 @@ class Winetricks < Formula
   end
 
   bottle do
-    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/winetricks-20221108"
-    sha256 cellar: :any_skip_relocation, big_sur: "44a6a7589e039f94ec4d6d45e328eb18bc342e1688be6c834eb53abda931323c"
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/winetricks-20230331"
+    sha256 cellar: :any_skip_relocation, monterey: "33a2020feacd1dd64618ba2490a48c1e2e515351b2bd4c75dbfadcc7ee854da5"
   end
 
   depends_on "cabextract"
