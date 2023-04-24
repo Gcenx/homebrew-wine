@@ -2,7 +2,7 @@ class CxLlvm < Formula
   desc "CodeWeavers custom compiler for -mwine32 targets"
   homepage "https://codeweavers.com/"
   url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.1.tar.gz"
-  sha256 "dd30b258494c27207c55548fe85ec32db33848ae18120baabe9aa3d014fb37ba"
+  sha256 "cdfe282ce33788bd4f969c8bfb1d3e2de060eb6c296fa1c3cdf4e4690b8b1831"
   license "NCSA"
 
   bottle do
