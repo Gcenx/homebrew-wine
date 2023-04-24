@@ -1,24 +1,11 @@
 # homebrew-wine
-This repository contains wine related casks/formulas.\
-![Downloads count](https://img.shields.io/github/downloads/gcenx/homebrew-wine/total.svg)
-
-## formulas;
-- `cx-llvm`     *(custom llvm|clang-8 toolchain for -mwine32 targets)*
-- `tapi`        *(Apple tapi-1100.0.11)*
-- `winetricks`  *(20230331)*
-
-### To install the `winetricks` package;
-```
-brew install --formula gcenx/wine/winetricks
-```
-_The custom `winetricks` verb uses my fork that's aimed at macOS_
+This repository contains wine related casks/formulas.
 
 <br>
 
 ## casks;
 - `portingkit`
 - `unofficial-wineskin`
-- `wine-stable-legacy` *(wine-7.0 without [bug 52354](https://bugs.winehq.org/show_bug.cgi?id=52354))*
 - `wine-crossover`     *(wine-7.7 [crossover-sources-22.1.0](https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.0.tar.gz))*
 
 ### To install the `wine-crossover` package;
