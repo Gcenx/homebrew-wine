@@ -6,8 +6,8 @@ class CxLlvm < Formula
   license "NCSA"
 
   bottle do
-    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/cx-llvm-22.0.1"
-    sha256 cellar: :any, big_sur: "c1083b98505e58f69898767da988673de3327f5e998275604c233182a3c662fc"
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/cx-llvm-22.1.1"
+    sha256 cellar: :any, monterey: "56c2fd25b084bf5478507bc9a6d97e7cb6197bdbb92f3108c68ec05310797856"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
