@@ -1,5 +1,5 @@
 # The 22.1.1 tarball contains an empty sources/freetype directory, which confuses the default CurlDownloadStrategy.
-# A custom strategy also allows us to restrict extraction to just the wine subdirectory.
+# A custom strategy also allows us to restrict extraction to just wine.
 class TarballDownloadStrategy < CurlDownloadStrategy
   def stage
     ohai "Staging #{cached_location} in #{pwd}"
@@ -56,22 +56,18 @@ class GamePortingToolkit < Formula
     ENV["MACOSX_DEPLOYMENT_TARGET"] = "10.14"
 
     wine_configure_options = ["--prefix=#{prefix}",
-                              "--disable-win16",
                               "--disable-tests",
-                              "--without-x",
-                              "--without-pulse",
-                              "--without-dbus",
-                              "--without-inotify",
                               "--without-alsa",
                               "--without-capi",
+                              "--without-dbus",
+                              "--without-inotify",
+                              "--without-krb5",
                               "--without-oss",
+                              "--without-pulse",
                               "--without-udev",
-                              "--without-krb5"]
+                              "--without-x"]
 
-    wine64_configure_options = ["--enable-win64",
-                                "--with-gnutls",
-                                "--with-freetype",
-                                "--with-gstreamer"]
+    wine64_configure_options = ["--enable-win64"]
 
     wine32_configure_options = ["--enable-win32on64",
                                 "--with-wine64=../wine64-build",
