@@ -90,16 +90,17 @@ class GamePortingToolkit < Formula
                               "--without-vulkan",
                               "--without-x"]
 
-    wine64_configure_options = ["--enable-win64",
-                                "--disable-d3d9",
-                                "--disable-d3d10",
-                                "--disable-d3d11",
-                                "--disable-d3d12",
-                                "--disable-dxgi",]
+    wine64_configure_options = ["--enable-win64"]
+
+    # These are provided by Game Porting Toolkit
+    wine64_configure_options += ["--disable-d3d9",
+                                 "--disable-d3d10",
+                                 "--disable-d3d11",
+                                 "--disable-d3d12",
+                                 "--disable-dxgi",]
 
     wine32_configure_options = ["--enable-win32on64",
                                 "--with-wine64=../wine64-build",
-                                "--disable-winedbg",
                                 "--disable-loader"]
 
     # Build 64-bit Wine first.
