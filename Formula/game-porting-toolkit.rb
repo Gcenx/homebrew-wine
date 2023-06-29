@@ -92,12 +92,12 @@ class GamePortingToolkit < Formula
 
     wine64_configure_options = ["--enable-win64"]
 
-    # These are provided by Game Porting Toolkit
+    # These will be provided by Game Porting Toolkit
     wine64_configure_options += ["--disable-d3d9",
                                  "--disable-d3d10",
                                  "--disable-d3d11",
                                  "--disable-d3d12",
-                                 "--disable-dxgi",]
+                                 "--disable-dxgi"]
 
     wine32_configure_options = ["--enable-win32on64",
                                 "--with-wine64=../wine64-build",
