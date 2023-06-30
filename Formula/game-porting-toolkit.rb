@@ -15,6 +15,11 @@ class GamePortingToolkit < Formula
   version "1.0"
   sha256 "cdfe282ce33788bd4f969c8bfb1d3e2de060eb6c296fa1c3cdf4e4690b8b1831"
 
+  bottle do
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/game-porting-toolkit-1.0"
+    sha256 monterey: "cfd27d1dba93f81e02032b3639fc0bd65c222dd43090226232fa7a4e847dc504"
+  end
+
   keg_only :versioned_formula
 
   depends_on "bison" => :build
