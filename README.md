@@ -6,7 +6,7 @@ This repository contains wine related casks/formulas.
 ## casks;
 - `portingkit`
 - `unofficial-wineskin`
-- `wine-crossover`     *(wine-7.7 [crossover-sources-22.1.0](https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.0.tar.gz))*
+- `wine-crossover`     *(wine-7.7 [crossover-sources-22.1.1](https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.1.tar.gz))*
 
 ## formulas
 - `cx-llvm` *(22.1.1)*
