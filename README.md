@@ -4,6 +4,7 @@ This repository contains wine related casks/formulas.
 <br>
 
 ## casks;
+- `game-porting-toolkit` *(1.0)*
 - `portingkit`
 - `unofficial-wineskin`
 - `wine-crossover`     *(wine-7.7 [crossover-sources-22.1.0](https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.0.tar.gz))*
