@@ -154,3 +154,51 @@ index 00000000..4a76c3f5
 +#define WINDEBUG_WHAT_HAPPENED_MESSAGE "This can be caused by a problem in the program or a deficiency in Wine. You may want to check <a href=\"http://www.codeweavers.com/compatibility/\">http://www.codeweavers.com/compatibility/</a> for tips about running this application."
 +
 +#define WINDEBUG_USER_SUGGESTION_MESSAGE "If this problem is not present under Windows and has not been reported yet, you can save the detailed information to a file using the \"Save As\" button, then <a href=\"http://www.codeweavers.com/support/tickets/enter/\">file a bug report</a> and attach that file to the report."
+From 477e3711bf2ff3930aee558936d2cc368db8933d Mon Sep 17 00:00:00 2001
+From: Brendan Shanks <bshanks@codeweavers.com>
+Date: Wed, 14 Jun 2023 12:21:40 -0700
+Subject: [PATCH] loader: Call _dyld_make_delayed_module_initializer_calls() in
+ preloader to fix macOS Sonoma.
+
+Intended as a short-term fix until I can add a __program_vars section
+(which requires a big zero-fill section).
+Only added for x86_64, since 10.14 and earlier i386 are working fine.
+---
+ loader/preloader_mac.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/loader/preloader_mac.c b/loader/preloader_mac.c
+index 4e91128c575..97830dd8d6a 100644
+--- a/loader/preloader_mac.c
++++ b/loader/preloader_mac.c
+@@ -312,6 +312,9 @@ void *wld_munmap( void *start, size_t len );
+ SYSCALL_FUNC( wld_munmap, 73 /* SYS_munmap */ );
+ 
+ static intptr_t (*p_dyld_get_image_slide)( const struct target_mach_header* mh );
++#ifdef __x86_64__
++static void (*p_dyld_make_delayed_module_initializer_calls)( void );
++#endif
+ 
+ #define MAKE_FUNCPTR(f) static typeof(f) * p##f
+ MAKE_FUNCPTR(dlopen);
+@@ -680,6 +683,9 @@ void *wld_start( void *stack, int *is_unix_thread )
+     LOAD_POSIX_DYLD_FUNC( dlsym );
+     LOAD_POSIX_DYLD_FUNC( dladdr );
+     LOAD_MACHO_DYLD_FUNC( _dyld_get_image_slide );
++#ifdef __x86_64__
++    LOAD_MACHO_DYLD_FUNC( _dyld_make_delayed_module_initializer_calls );
++#endif
+ 
+     /* reserve memory that Wine needs */
+     if (reserve) preload_reserve( reserve );
+@@ -695,6 +701,10 @@ void *wld_start( void *stack, int *is_unix_thread )
+     if (!map_region( &builtin_dlls ))
+         builtin_dlls.size = 0;
+ 
++#ifdef __x86_64__
++    p_dyld_make_delayed_module_initializer_calls();
++#endif
++
+     /* load the main binary */
+     if (!(mod = pdlopen( argv[1], RTLD_NOW )))
+         fatal_error( "%s: could not load binary\n", argv[1] );
