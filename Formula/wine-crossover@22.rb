@@ -136,11 +136,11 @@ class WineCrossoverAT22 < Formula
 end
 
 __END__
-diff --git a/wine/include/distversion.h b/wine/include/distversion.h
+diff --git a/include/distversion.h b/wine/include/distversion.h
 new file mode 100644
 index 00000000..4a76c3f5
 --- /dev/null
-+++ b/wine/include/distversion.h
++++ b/include/distversion.h
 @@ -0,0 +1,12 @@
 +/* ---------------------------------------------------------------
 + *   distversion.c
