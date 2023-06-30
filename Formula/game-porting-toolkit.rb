@@ -30,6 +30,16 @@ class GamePortingToolkit < Formula
 
   uses_from_macos "flex" => :build
 
+  resource "gecko-x86" do
+    url "https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86.tar.xz"
+    sha256 "8fab46ea2110b2b0beed414e3ebb4e038a3da04900e7a28492ca3c3ccf9fea94"
+  end
+
+  resource "gecko-x86_64" do
+    url "https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86_64.tar.xz"
+    sha256 "b4476706a4c3f23461da98bed34f355ff623c5d2bb2da1e2fa0c6a310bc33014"
+  end
+
   # Getting patch from my winecx mirror
   patch do
     url "https://github.com/Gcenx/winecx/commit/a039ed8aece88886307a690a30aa143ba8796474.patch?full_index=1"
@@ -62,7 +72,6 @@ class GamePortingToolkit < Formula
                               "--with-coreaudio",
                               "--with-cups",
                               "--without-dbus",
-                              "--without-fontconfig",
                               "--with-freetype",
                               "--with-gettext",
                               "--without-gettextpo",
@@ -92,7 +101,7 @@ class GamePortingToolkit < Formula
 
     wine64_configure_options = ["--enable-win64"]
 
-    # These will be provided by Game Porting Toolkit
+    # These are provided by Game Porting Toolkit
     wine64_configure_options += ["--disable-d3d9",
                                  "--disable-d3d10",
                                  "--disable-d3d11",
@@ -100,8 +109,10 @@ class GamePortingToolkit < Formula
                                  "--disable-dxgi"]
 
     wine32_configure_options = ["--enable-win32on64",
-                                "--with-wine64=../wine64-build",
-                                "--disable-loader"]
+                                "--with-wine64=../wine64-build"]
+
+    # We don't need wineloader
+    wine32_configure_options += ["--disable-loader"]
 
     # Build 64-bit Wine first.
     mkdir buildpath/"wine64-build" do
@@ -123,6 +134,11 @@ class GamePortingToolkit < Formula
     cd "wine32-build" do
       system "make", "install-lib"
     end
+  end
+
+  def post_install
+    (share/"wine"/"gecko"/"wine-gecko-2.47.2-x86").install resource("gecko-x86")
+    (share/"wine"/"gecko"/"wine-gecko-2.47.2-x86_64").install resource("gecko-x86_64")
   end
 
   def caveats
