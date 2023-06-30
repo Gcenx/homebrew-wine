@@ -10,7 +10,7 @@ end
 
 class WineCrossoverAT22 < Formula
   desc "Run Windows applications without a copy of Microsoft Window"
-  homepage "https://www.winehq.org/"
+  homepage "https://www.codeweavers.com"
   url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.1.tar.gz", using: TarballDownloadStrategy
   sha256 "cdfe282ce33788bd4f969c8bfb1d3e2de060eb6c296fa1c3cdf4e4690b8b1831"
   license "GPL-2.0-or-later"
@@ -159,19 +159,6 @@ index 00000000..4a76c3f5
 +#define WINDEBUG_WHAT_HAPPENED_MESSAGE "This can be caused by a problem in the program or a deficiency in Wine. You may want to check <a href=\"http://www.codeweavers.com/compatibility/\">http://www.codeweavers.com/compatibility/</a> for tips about running this application."
 +
 +#define WINDEBUG_USER_SUGGESTION_MESSAGE "If this problem is not present under Windows and has not been reported yet, you can save the detailed information to a file using the \"Save As\" button, then <a href=\"http://www.codeweavers.com/support/tickets/enter/\">file a bug report</a> and attach that file to the report."
-From 477e3711bf2ff3930aee558936d2cc368db8933d Mon Sep 17 00:00:00 2001
-From: Brendan Shanks <bshanks@codeweavers.com>
-Date: Wed, 14 Jun 2023 12:21:40 -0700
-Subject: [PATCH] loader: Call _dyld_make_delayed_module_initializer_calls() in
- preloader to fix macOS Sonoma.
-
-Intended as a short-term fix until I can add a __program_vars section
-(which requires a big zero-fill section).
-Only added for x86_64, since 10.14 and earlier i386 are working fine.
----
- loader/preloader_mac.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
-
 diff --git a/loader/preloader_mac.c b/loader/preloader_mac.c
 index 4e91128c575..97830dd8d6a 100644
 --- a/loader/preloader_mac.c
