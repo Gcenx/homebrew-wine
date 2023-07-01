@@ -12,7 +12,7 @@ class GamePortingToolkit < Formula
   desc "Apple Game Porting Toolkit"
   homepage "https://developer.apple.com/"
   url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.1.tar.gz", using: TarballDownloadStrategy
-  version "1.0"
+  version "1.0.2"
   sha256 "cdfe282ce33788bd4f969c8bfb1d3e2de060eb6c296fa1c3cdf4e4690b8b1831"
 
   bottle do
@@ -45,10 +45,17 @@ class GamePortingToolkit < Formula
     sha256 "b4476706a4c3f23461da98bed34f355ff623c5d2bb2da1e2fa0c6a310bc33014"
   end
 
-  # Getting patch from my winecx mirror
+  # Getting patchs from my winecx mirror
+  # game-porting-toolkit 1.0
   patch do
     url "https://github.com/Gcenx/winecx/commit/a039ed8aece88886307a690a30aa143ba8796474.patch?full_index=1"
     sha256 "1a19348aa24f6308d323b972c3c689b4301d9a0d7d7faa0b8391d3c932185248"
+  end
+
+  # game-porting-toolkit 1.0.2
+  patch do
+    url "https://github.com/Gcenx/winecx/commit/bc0f70f1bb68d02e8d6e67093d1f9e52014021f3.patch?full_index=1"
+    sha256 "659fc28ac1ab81bb0783310a59e874ea5c8285d7b14ba325edf55f084e662d76"
   end
 
   def install
@@ -142,6 +149,17 @@ class GamePortingToolkit < Formula
   end
 
   def post_install
+    # Homebrew replaces wine's rpath names with absolute paths, we need to change them back to @rpath relative paths
+    # Wine relies on @rpath names to cause dlopen to always return the first dylib with that name loaded into
+    # the process rather than the actual dylib found using rpath lookup.
+    Dir["#{lib}/wine/{x86_64-unix,x86_32on64-unix}/*.so"].each do |dylib|
+      chmod 0664, dylib
+      MachO::Tools.change_dylib_id(dylib, "@rpath/#{File.basename(dylib)}")
+      MachO.codesign!(dylib)
+      chmod 0444, dylib
+    end
+
+    # Install wine-gecko into place
     (share/"wine"/"gecko"/"wine-gecko-2.47.2-x86").install resource("gecko-x86")
     (share/"wine"/"gecko"/"wine-gecko-2.47.2-x86_64").install resource("gecko-x86_64")
   end
