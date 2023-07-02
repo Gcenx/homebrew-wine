@@ -14,6 +14,7 @@ class WineCrossoverAT22 < Formula
   url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.1.tar.gz", using: TarballDownloadStrategy
   sha256 "cdfe282ce33788bd4f969c8bfb1d3e2de060eb6c296fa1c3cdf4e4690b8b1831"
   license "GPL-2.0-or-later"
+  revision "1"
 
   bottle do
     root_url "https://github.com/Gcenx/homebrew-wine/releases/download/wine-crossover@22-22.1.1"
@@ -131,6 +132,17 @@ class WineCrossoverAT22 < Formula
   end
 
   def post_install
+    # Homebrew replaces wine's rpath names with absolute paths, we need to change them back to @rpath relative paths
+    # Wine relies on @rpath names to cause dlopen to always return the first dylib with that name loaded into
+    # the process rather than the actual dylib found using rpath lookup.
+    Dir["#{lib}/wine/{x86_64-unix,x86_32on64-unix}/*.so"].each do |dylib|
+      chmod 0664, dylib
+      MachO::Tools.change_dylib_id(dylib, "@rpath/#{File.basename(dylib)}")
+      MachO.codesign!(dylib)
+      chmod 0444, dylib
+    end
+
+    # Install wine-gecko into place
     (share/"wine"/"gecko"/"wine-gecko-2.47.2-x86").install resource("gecko-x86")
     (share/"wine"/"gecko"/"wine-gecko-2.47.2-x86_64").install resource("gecko-x86_64")
   end
