@@ -14,12 +14,7 @@ class WineCrossoverAT22 < Formula
   url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.1.tar.gz", using: TarballDownloadStrategy
   sha256 "cdfe282ce33788bd4f969c8bfb1d3e2de060eb6c296fa1c3cdf4e4690b8b1831"
   license "GPL-2.0-or-later"
-  revision "1"
-
-  bottle do
-    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/wine-crossover@22-22.1.1"
-    sha256 monterey: "05bf09d8f693706a8647009b08a221ad64ff4951cd02098ffded2b19251322c8"
-  end
+  revision 1
 
   keg_only :versioned_formula
 
