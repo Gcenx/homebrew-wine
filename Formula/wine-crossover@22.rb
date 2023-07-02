@@ -16,6 +16,11 @@ class WineCrossoverAT22 < Formula
   license "GPL-2.0-or-later"
   revision 2
 
+  bottle do
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/wine-crossover@22-22.1.1_2"
+    sha256 monterey: "f6985a085c6790c8a333ad31cad8c19a4291a2b7ae859a83228b6fae0a257239"
+  end
+
   keg_only :versioned_formula
 
   depends_on "bison" => :build
