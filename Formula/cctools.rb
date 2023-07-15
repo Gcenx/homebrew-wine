@@ -5,6 +5,11 @@ class Cctools < Formula
   sha256 "16d10a2c4f529ab42abe4907f688cdcc3d6ab5a7822fabdb3dc2749e119decec"
   license "APSL-2.0"
 
+  bottle do
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/cctools-609"
+    sha256 cellar: :any, monterey: "ae05d9395f3ef4d2a2cba8a5f67d439ffc55b9121d40daf3d0e414350f474edc"
+  end
+
   keg_only "provided by Xcode CLT"
 
   depends_on "cmake" => :build
