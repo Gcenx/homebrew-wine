@@ -24,6 +24,7 @@ class WineCrossoverAT22 < Formula
   keg_only :versioned_formula
 
   depends_on "bison" => :build
+  depends_on "cctools" => :build
   depends_on "cx-llvm" => :build
   depends_on "mingw-w64" => :build
   depends_on "pkg-config" => :build
