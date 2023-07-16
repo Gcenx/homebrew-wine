@@ -11,6 +11,11 @@ class Winetricks < Formula
     regex(/^v?(\d{6,8})$/i)
   end
 
+  bottle do
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/winetricks-20230707"
+    sha256 cellar: :any_skip_relocation, monterey: "5ca7e369f50588c21b993c7bfc823018a7ebc777eff4f578aee123ee8762613a"
+  end
+
   depends_on "cabextract"
   depends_on "p7zip"
   depends_on "unzip"
