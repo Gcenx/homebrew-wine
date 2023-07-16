@@ -14,6 +14,7 @@ class GamePortingToolkit < Formula
   url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.1.tar.gz", using: TarballDownloadStrategy
   version "1.0.2"
   sha256 "cdfe282ce33788bd4f969c8bfb1d3e2de060eb6c296fa1c3cdf4e4690b8b1831"
+  revision 1
 
   bottle do
     root_url "https://github.com/Gcenx/homebrew-wine/releases/download/game-porting-toolkit-1.0.2"
@@ -112,13 +113,6 @@ class GamePortingToolkit < Formula
                               "--without-x"]
 
     wine64_configure_options = ["--enable-win64"]
-
-    # These are provided by Game Porting Toolkit
-    wine64_configure_options += ["--disable-d3d9",
-                                 "--disable-d3d10",
-                                 "--disable-d3d11",
-                                 "--disable-d3d12",
-                                 "--disable-dxgi"]
 
     wine32_configure_options = ["--enable-win32on64",
                                 "--with-wine64=../wine64-build"]
