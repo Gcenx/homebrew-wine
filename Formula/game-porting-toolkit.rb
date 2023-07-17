@@ -25,6 +25,7 @@ class GamePortingToolkit < Formula
 
   depends_on "bison" => :build
   depends_on "cx-llvm" => :build
+  depends_on "ld64" => :build
   depends_on "mingw-w64" => :build
   depends_on "pkg-config" => :build
   depends_on arch: :x86_64
@@ -63,8 +64,10 @@ class GamePortingToolkit < Formula
     # Bypass the Homebrew shims to build native binaries with the dedicated compiler.
     # (PE binaries will be built with mingw32-gcc.)
     compiler = Formula["cx-llvm"]
+    linker = Formula["ld64"]
     compiler_options = ["CC=#{compiler.bin}/clang",
-                        "CXX=#{compiler.bin}/clang++"]
+                        "CXX=#{compiler.bin}/clang++",
+                        "LD=#{linker.bin}/ld"]
 
     # We also need to tell the linker to add Homebrew to the rpath stack.
     ENV.append "LDFLAGS", "-lSystem"
