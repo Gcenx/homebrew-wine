@@ -67,6 +67,7 @@ class GamePortingToolkit < Formula
     linker = Formula["cctools"]
     compiler_options = ["CC=#{compiler.bin}/clang",
                         "CXX=#{compiler.bin}/clang++",
+                        "AS=#{linker.bin}/as",
                         "LD=#{linker.bin}/ld"]
 
     # We also need to tell the linker to add Homebrew to the rpath stack.
