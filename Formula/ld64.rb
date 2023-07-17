@@ -5,6 +5,11 @@ class Ld64 < Formula
   sha256 "16d10a2c4f529ab42abe4907f688cdcc3d6ab5a7822fabdb3dc2749e119decec"
   license "APSL-2.0"
 
+  bottle do
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/ld64-609"
+    sha256 cellar: :any, monterey: "45a8af4265f525a09e83564af79ad394483d437948331019fa7a34b0d72e6e42"
+  end
+
   keg_only "provided by Xcode CLT"
 
   depends_on "cmake" => :build
