@@ -1,4 +1,4 @@
-cask "unofficial-wineskin" do
+cask "wineskin" do
   version "1.8.4.2"
   sha256 :no_check
 
