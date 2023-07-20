@@ -3,7 +3,8 @@ This repository contains wine related casks/formulas.
 
 <br>
 
-## casks;
+## casks
+- `gstreamer` *(1.22.4)*
 - `portingkit`
 - `unofficial-wineskin`
 - `wine-crossover`     *(wine-7.7 [crossover-sources-22.1.1](https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.1.tar.gz))*
