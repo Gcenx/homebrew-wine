@@ -7,6 +7,8 @@ cask "unofficial-wineskin" do
   desc "Porting tool, to make Windows programs/games into native apps"
   homepage "https://github.com/Gcenx/WineskinServer/"
 
+  depends_on cask: "gstreamer"
+
   app "Wineskin Winery.app"
 
   # Workaround issue until it's fixed in Winery
