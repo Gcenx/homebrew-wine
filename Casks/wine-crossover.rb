@@ -10,7 +10,6 @@ cask "wine-crossover" do
   conflicts_with formula: "wine",
                  cask:    %w[
                    wine-stable
-                   wine-stable-legacy
                    wine-devel
                    wine-staging
                  ]
