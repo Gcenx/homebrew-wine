@@ -11,8 +11,7 @@ This repository contains wine related casks/formulas.
 
 ## formulas
 - `cx-llvm` *(22.1.1)*
-- `game-porting-toolkit` *(1.0.2)*
-- `wine-crossover@22` *(22.1.1)*
+- `game-porting-toolkit` *(1.0.3)*
 
 ### To install the `wine-crossover` package;
 ```
