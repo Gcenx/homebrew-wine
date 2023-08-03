@@ -1,5 +1,4 @@
 # homebrew-wine
-This repository contains wine related casks/formulas.
 
 <br>
 
@@ -12,13 +11,3 @@ This repository contains wine related casks/formulas.
 ## formulas
 - `cx-llvm` *(22.1.1)*
 - `game-porting-toolkit` *(1.0.3)*
-
-### To install the `wine-crossover` package;
-```
-brew install --cask --no-quarantine gcenx/wine/wine-crossover
-```
-This will install `Wine Crossover` into `/Applications` and function as the official brew cask would.\
-The `--no-quarantine` flag is required so brew skips the quarantine flag that causes Gatekeeper to believe `Wine Crossover` is broken.
-
-## Don't open issues on Winehq!;
-`wine-crossover` is not an upstream package.
