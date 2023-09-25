@@ -10,4 +10,4 @@
 
 ## formulas
 - `cx-llvm` *(22.1.1)*
-- `game-porting-toolkit` *(1.0.3)*
+- `game-porting-toolkit` *(1.0.4)*
