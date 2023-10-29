@@ -5,7 +5,12 @@ cask "wine-crossover" do
   url "https://github.com/Gcenx/winecx/releases/download/crossover-wine-#{version}/wine-crossover-#{version}-osx64.tar.xz"
   name "Wine Crossover"
   desc "Compatibility layer to run Windows applications"
-  homepage "https://github.com/Gcenx/homebrew-wine/"
+  homepage "https://github.com/Gcenx/winecx/"
+
+  livecheck do
+    url :stable
+    strategy :github_releases
+  end
 
   conflicts_with formula: "wine",
                  cask:    %w[
