@@ -34,7 +34,6 @@ cask "wine-crossover" do
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wineboot"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/winecfg"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wineconsole"
-  binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/winedbg"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/winefile"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/winemine"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/winepath"
