@@ -7,7 +7,7 @@ cask "wineskin" do
   desc "Porting tool, to make Windows programs/games into native apps"
   homepage "https://github.com/Gcenx/WineskinServer/"
 
-  depends_on cask: "gcenx/wine/gstreamer-framework"
+  depends_on cask: "gstreamer-runtime"
 
   app "Wineskin Winery.app"
 
