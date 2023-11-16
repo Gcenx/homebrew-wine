@@ -12,7 +12,7 @@ class GamePortingToolkit < Formula
   desc "Apple Game Porting Toolkit"
   homepage "https://developer.apple.com/"
   url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.1.tar.gz", using: TarballDownloadStrategy
-  version "1.0.4"
+  version "1.1"
   sha256 "cdfe282ce33788bd4f969c8bfb1d3e2de060eb6c296fa1c3cdf4e4690b8b1831"
 
   bottle do
@@ -68,6 +68,12 @@ class GamePortingToolkit < Formula
   patch do
     url "https://github.com/Gcenx/winecx/commit/070acf70ffb214f12faa73d8ea76a27ec5a5bf83.patch?full_index=1"
     sha256 "3cbde06bf373b4643561484ab49dfb5eb618b74469cb920ead82a4652ed4e57e"
+  end
+
+  # game-porting-toolkit 1.1
+  patch do
+    url "https://github.com/Gcenx/winecx/commit/853f1f2f0e113d759cffa72424130bb62bd5bfaa.patch?full_index=1"
+    sha256 "cf3a0a5d935115e89e8440542595142ebac99a8ece7f96028f272149412b8c9c"
   end
 
   def install
