@@ -3,10 +3,9 @@
 <br>
 
 ## casks
-- `gstreamer` *(1.22.6)*
 - `portingkit`
 - `wineskin`
-- `wine-crossover`     *(wine-7.7 [crossover-sources-22.1.1](https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.1.tar.gz))*
+- `wine-crossover`     *(wine-8.0.1 [crossover-sources-23.0.1](https://media.codeweavers.com/pub/crossover/source/crossover-sources-23.0.1.tar.gz))*
 
 ## formulas
 - `cx-llvm` *(22.1.1)*
