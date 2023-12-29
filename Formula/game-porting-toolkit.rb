@@ -46,34 +46,34 @@ class GamePortingToolkit < Formula
   end
 
   # Getting patchs from my winecx mirror
-  # game-porting-toolkit 1.0
+  # Game Porting Toolkit 1.0 (beta 1)
   patch do
-    url "https://github.com/Gcenx/winecx/commit/a039ed8aece88886307a690a30aa143ba8796474.patch?full_index=1"
-    sha256 "1a19348aa24f6308d323b972c3c689b4301d9a0d7d7faa0b8391d3c932185248"
+    url "https://github.com/Gcenx/winecx/commit/ab4973d083af65dcd6dfd942ce962e41a24c00ca.patch?full_index=1"
+    sha256 "085c8d6762c899b7d1f8ab304aaffbf9f0b21c589d0ba24047625eb9d7af456b"
   end
 
-  # game-porting-toolkit 1.0.2
+  # Game Porting Toolkit 1.0 (beta 2)
   patch do
-    url "https://github.com/Gcenx/winecx/commit/bc0f70f1bb68d02e8d6e67093d1f9e52014021f3.patch?full_index=1"
-    sha256 "659fc28ac1ab81bb0783310a59e874ea5c8285d7b14ba325edf55f084e662d76"
+    url "https://github.com/Gcenx/winecx/commit/2da8f1b28ab80fa1f5b06280c2df179efbe79acc.patch?full_index=1"
+    sha256 "cacbf7f05dc8a355b8136279ef5f47a83cfa5dd7b2aa04e67f62ee8437ab9df7"
   end
 
-  # game-porting-toolkit 1.0.3
+  # Game Porting Toolkit 1.0 (beta 3)
   patch do
-    url "https://github.com/Gcenx/winecx/commit/4138c8d71de5cf6b4584856c813ba0824479af7c.patch?full_index=1"
-    sha256 "420c0c7711f6ca669f5c1b3772c6c7a3a4da9f103a916c3ecd58b48824cce918"
+    url "https://github.com/Gcenx/winecx/commit/1e0b0fddce1c762c4504c948d198ec4e95d4d6c9.patch?full_index=1"
+    sha256 "d9375141b843f6281df081becc3cfd777c425c5ebb140a87ce450cb7d9e0a4b9"
   end
 
-  # game-porting-toolkit 1.0.4
+  # Game Porting Toolkit 1.0 (beta 4)
   patch do
-    url "https://github.com/Gcenx/winecx/commit/070acf70ffb214f12faa73d8ea76a27ec5a5bf83.patch?full_index=1"
-    sha256 "3cbde06bf373b4643561484ab49dfb5eb618b74469cb920ead82a4652ed4e57e"
+    url "https://github.com/Gcenx/winecx/commit/b6c79917506b438217aa2eaea3b13b9acf9e1c81.patch?full_index=1"
+    sha256 "0bcd8b2e407b16dc0db795cf132e179e952ab0da6f1b4c1824abd13e7975c2c3"
   end
 
-  # game-porting-toolkit 1.1
+  # Game Porting Toolkit 1.1
   patch do
-    url "https://github.com/Gcenx/winecx/commit/853f1f2f0e113d759cffa72424130bb62bd5bfaa.patch?full_index=1"
-    sha256 "cf3a0a5d935115e89e8440542595142ebac99a8ece7f96028f272149412b8c9c"
+    url "https://github.com/Gcenx/winecx/commit/2e232b59da4612f2f131bd2f690d70d8fbdf9b87.patch?full_index=1"
+    sha256 "073165eb8f19e3cfcceca5b3279214ea977e6f2d4275464cd17e7509a4f2733c"
   end
 
   def install
