@@ -12,7 +12,7 @@ cask "game-porting-toolkit" do
     strategy :github_releases
   end
 
-  conflicts_with cask: [
+  conflicts_with cask: %w[
     wine-crossover,
     wine-devel,
     wine-stable,
