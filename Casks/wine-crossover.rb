@@ -12,8 +12,8 @@ cask "wine-crossover" do
     strategy :github_releases
   end
 
-  conflicts_with formula: "wine",
-                 cask:    %w[
+  conflicts_with cask: %w[
+                   game-porting-toolkit
                    wine-stable
                    wine-devel
                    wine-staging
