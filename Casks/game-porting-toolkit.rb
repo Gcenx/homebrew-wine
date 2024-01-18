@@ -4,7 +4,7 @@ cask "game-porting-toolkit" do
 
   url "https://github.com/Gcenx/game-porting-toolkit/releases/download/Game-Porting-Toolkit-#{version}-gstreamer/game-porting-toolkit-#{version}.tar.xz"
   name "Game Porting Toolkit"
-  desc "Use the game porting toolkit to eliminate months of up-front work and evaluate how well your game could run on Mac before writing any code."
+  desc "Use to eliminate months of up-front work and evaluate how well your game could run before writing any code."
   homepage "https://developer.apple.com/games"
 
   livecheck do
@@ -13,10 +13,10 @@ cask "game-porting-toolkit" do
   end
 
   conflicts_with cask: %w[
-    wine-crossover,
-    wine-devel,
-    wine-stable,
-    wine-staging,
+    wine-crossover
+    wine-devel
+    wine-stable
+    wine-staging
   ]
   depends_on cask: "gstreamer-runtime"
   depends_on macos: ">= :sonoma"
