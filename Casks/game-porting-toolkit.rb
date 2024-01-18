@@ -4,7 +4,7 @@ cask "game-porting-toolkit" do
 
   url "https://github.com/Gcenx/game-porting-toolkit/releases/download/Game-Porting-Toolkit-#{version}-gstreamer/game-porting-toolkit-#{version}.tar.xz"
   name "Game Porting Toolkit"
-  desc "Use to eliminate months of up-front work and evaluate how well your game"
+  desc "Use to eliminate months of up-front work and evaluate how well your game runs"
   homepage "https://developer.apple.com/games"
 
   livecheck do
