@@ -4,7 +4,7 @@ cask "game-porting-toolkit" do
 
   url "https://github.com/Gcenx/game-porting-toolkit/releases/download/Game-Porting-Toolkit-#{version}-gstreamer/game-porting-toolkit-#{version}.tar.xz"
   name "Game Porting Toolkit"
-  desc "Game Porting Toolkit #{version}"
+  desc "Use the game porting toolkit to eliminate months of up-front work and evaluate how well your game could run on Mac before writing any code."
   homepage "https://developer.apple.com/games"
 
   livecheck do
@@ -12,8 +12,7 @@ cask "game-porting-toolkit" do
     strategy :github_releases
   end
 
-  conflicts_with formula: "wine",
-  cask:    %w[
+  conflicts_with cask: [
     wine-crossover,
     wine-devel,
     wine-stable,
