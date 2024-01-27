@@ -16,4 +16,10 @@ cask "wineskin" do
   preflight do
     system_command "/bin/mkdir", args: ["-p", "/Users/#{ENV.fetch("USER")}/Applications/Wineskin"], sudo: false
   end
+
+  zap trash: [
+    "~/Library/Application Support/Wineskin",
+    "~/Library/Caches/com.unofficial.wineskin",
+    "~/Library/Caches/com.unofficial.wineskinwinery",
+  ]
 end
