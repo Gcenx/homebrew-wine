@@ -13,11 +13,11 @@ cask "wine-crossover" do
   end
 
   conflicts_with cask: %w[
-                   game-porting-toolkit
-                   wine-stable
-                   wine-devel
-                   wine-staging
-                 ]
+    game-porting-toolkit
+    wine-stable
+    wine-devel
+    wine-staging
+  ]
   depends_on macos: ">= :catalina"
 
   app "Wine Crossover.app"
