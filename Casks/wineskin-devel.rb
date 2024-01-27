@@ -1,16 +1,15 @@
-cask "wineskin" do
-  version "1.8.4.2"
+cask "wineskin-devel" do
+  version "1.8.4.3"
   sha256 :no_check
 
-  url "https://github.com/Gcenx/WineskinServer/releases/download/V#{version}/Wineskin.Winery.txz"
+  url "https://github.com/The-Wineskin-Project/Winery/releases/download/#{version}/wineskin-winery-v#{version}.tar.xz"
   name "Wineskin Winery"
   desc "Porting tool, to make Windows programs/games into native apps"
-  homepage "https://github.com/Gcenx/WineskinServer/"
+  homepage "https://github.com/The-Wineskin-Project/Winery/"
 
   conflicts_with cask: %w[
-    wineskin-devel
+    wineskin
   ]
-  depends_on cask: "gstreamer-runtime"
   depends_on macos: ">= :catalina"
 
   app "Wineskin Winery.app"
