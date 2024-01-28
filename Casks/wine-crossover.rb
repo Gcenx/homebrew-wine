@@ -49,4 +49,7 @@ cask "wine-crossover" do
     [HKCU\\Software\\Wine\\Mac Driver]
     "ForceOpenGLBackingStore"="y"
   EOS
+  caveats do
+    requires_rosetta
+  end
 end
