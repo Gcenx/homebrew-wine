@@ -13,4 +13,7 @@ cask "portingkit" do
     With #{token}, you can install Windows games and apps on macOS easily
     using Wineskin technology!
   EOS
+  caveats do
+    requires_rosetta
+  end
 end

@@ -47,4 +47,7 @@ cask "game-porting-toolkit" do
   caveats <<~EOS
     Please follow the instructions in the Game Porting Toolkit README to complete installation.
   EOS
+  caveats do
+    requires_rosetta
+  end
 end

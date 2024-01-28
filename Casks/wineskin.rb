@@ -26,4 +26,8 @@ cask "wineskin" do
     "~/Library/Caches/com.unofficial.wineskin",
     "~/Library/Caches/com.unofficial.wineskinwinery",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end
