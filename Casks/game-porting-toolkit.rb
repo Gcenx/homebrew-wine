@@ -29,6 +29,10 @@ cask "game-porting-toolkit" do
   binary "#{appdir}/Game Porting Toolkit.app/Contents/Resources/wine/bin/wine64-preloader"
   binary "#{appdir}/Game Porting Toolkit.app/Contents/Resources/wine/bin/wineserver"
 
+  postflight do
+    system "xattr", "-drs", "com.apple.quarantine", "#{appdir}/Game Porting Toolkit.app"
+  end
+
   zap trash: [
         "~/.local/share/applications/wine*",
         "~/.local/share/icons/hicolor/**/application-x-wine*",
