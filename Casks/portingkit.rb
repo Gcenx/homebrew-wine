@@ -9,6 +9,10 @@ cask "portingkit" do
 
   app "Porting kit.app"
 
+  postflight do
+    system "xattr", "-drs", "com.apple.quarantine", "#{appdir}/Porting kit.app"
+  end
+
   caveats <<~EOS
     With #{token}, you can install Windows games and apps on macOS easily
     using Wineskin technology!

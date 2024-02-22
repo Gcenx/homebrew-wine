@@ -39,6 +39,10 @@ cask "wine-crossover" do
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/winepath"
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wineserver"
 
+  postflight do
+    system "xattr", "-drs", "com.apple.quarantine", "#{appdir}/Wine Crossover.app"
+  end
+
   caveats <<~EOS
     #{token} supports running 32-bit & 64-bit windows binaries.
 
