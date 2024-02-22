@@ -15,11 +15,9 @@ cask "wineskin" do
 
   app "Wineskin Winery.app"
 
-  # Workaround issue until it's fixed in Winery
-  # https://github.com/Gcenx/WineskinServer/issues/96
   preflight do
-    system "xattr", "-drs", "com.apple.quarantine", "#{appdir}/Wineskin Winery.app"
     system_command "/bin/mkdir", args: ["-p", "/Users/#{ENV.fetch("USER")}/Applications/Wineskin"], sudo: false
+    system_command "/usr/bin/xattr", args: ["-drs", "com.apple.quarantine", "#{appdir}/Wineskin Winery.app"], sudo: false
   end
 
   zap trash: [
