@@ -10,7 +10,7 @@ cask "portingkit" do
   app "Porting kit.app"
 
   postflight do
-    system_command "/usr/bin/xattr", args: ["-drs", "com.apple.quarantine", "#{appdir}/Porting kit.app"], sudo: false
+    system "xattr", "-drs", "com.apple.quarantine", "#{appdir}/Porting kit.app"
   end
 
   caveats <<~EOS

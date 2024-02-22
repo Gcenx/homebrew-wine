@@ -30,7 +30,7 @@ cask "game-porting-toolkit" do
   binary "#{appdir}/Game Porting Toolkit.app/Contents/Resources/wine/bin/wineserver"
 
   postflight do
-    system_command "/usr/bin/xattr", args: ["-drs", "com.apple.quarantine", "#{appdir}/Game Porting Toolkit.app"], sudo: false
+    system "xattr", "-drs", "com.apple.quarantine", "#{appdir}/Game Porting Toolkit.app"
   end
 
   zap trash: [
