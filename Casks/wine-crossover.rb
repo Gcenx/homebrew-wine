@@ -40,7 +40,8 @@ cask "wine-crossover" do
   binary "#{appdir}/Wine Crossover.app/Contents/Resources/wine/bin/wineserver"
 
   postflight do
-    system "xattr", "-drs", "com.apple.quarantine", "#{appdir}/Wine Crossover.app"
+    system "/usr/bin/xattr", "-drs", "com.apple.quarantine", "#{appdir}/Wine Crossover.app"
+    system "/usr/bin/codesign", "--force", "--deep", "-s", "-", "#{appdir}/Wine Crossover.app"
   end
 
   caveats <<~EOS
