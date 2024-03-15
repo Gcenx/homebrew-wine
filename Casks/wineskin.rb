@@ -8,7 +8,7 @@ cask "wineskin" do
   homepage "https://github.com/The-Wineskin-Project/Winery/"
 
   conflicts_with cask: %w[
-    wineskin
+    wineskin-devel
   ]
   depends_on macos: ">= :catalina"
 
