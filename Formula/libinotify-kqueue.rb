@@ -41,4 +41,3 @@ class LibinotifyKqueue < Formula
     system "./test"
   end
 end
-  
