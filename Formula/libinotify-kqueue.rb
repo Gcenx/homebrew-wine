@@ -8,6 +8,11 @@ class LibinotifyKqueue < Formula
   head "https://github.com/libinotify-kqueue/libinotify-kqueue.git",
     branch: "master"
 
+  bottle do
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/libinotify-kqueue-20211018"
+    sha256 cellar: :any, monterey: "c57f064ad92d084d4c3b0f92d5714d1d0942c944a5f334379ce5fdac801627d6"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gcc" => :build
