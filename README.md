@@ -1,9 +1,6 @@
 # homebrew-wine
 
-Add the tap:
-```sh
-brew tap gcenx/wine
-```
+<br>
 
 ## casks
 - `game-porting-toolkit` *(v1.1)*
