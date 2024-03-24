@@ -12,4 +12,4 @@
 ## formulas
 - `cx-llvm` *(22.1.1)*
 - `game-porting-toolkit` *(1.1)*
-- `libinotify-kqueue`
+- `libinotify-kqueue` *(20211018)*
