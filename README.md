@@ -1,6 +1,9 @@
 # homebrew-wine
 
-<br>
+Add the tap:
+```sh
+brew tap gcenx/wine
+```
 
 ## casks
 - `game-porting-toolkit` *(v1.1)*
@@ -12,3 +15,4 @@
 ## formulas
 - `cx-llvm` *(22.1.1)*
 - `game-porting-toolkit` *(1.1)*
+- `libinotify-kqueue`
