@@ -19,6 +19,7 @@ class GamePortingToolkit < Formula
     root_url "https://github.com/Gcenx/homebrew-wine/releases/download/game-porting-toolkit-1.1"
     sha256 monterey: "0094bdb2cc0f2be6341fb0470a618e27f1f034c95779e85ad534fd86fa1759be"
   end
+  depends_on :macos
 
   keg_only :versioned_formula
 
