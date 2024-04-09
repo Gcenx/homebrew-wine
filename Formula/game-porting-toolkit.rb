@@ -31,6 +31,7 @@ class GamePortingToolkit < Formula
   depends_on "gettext"
   depends_on "gnutls"
   depends_on "gstreamer"
+  depends_on :macos
   depends_on "sdl2"
 
   uses_from_macos "flex" => :build
