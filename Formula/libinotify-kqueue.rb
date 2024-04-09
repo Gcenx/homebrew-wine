@@ -17,6 +17,7 @@ class LibinotifyKqueue < Formula
   depends_on "automake" => :build
   depends_on "gcc" => :build
   depends_on "libtool" => :build
+  depends_on :macos
 
   def install
     # Autoconf
