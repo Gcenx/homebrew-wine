@@ -19,6 +19,7 @@ class CxLlvm < Formula
   depends_on "cmake" => :build
   depends_on xcode: :build
   depends_on arch: :x86_64
+  depends_on :macos
 
   uses_from_macos "libedit"
   uses_from_macos "libffi"
