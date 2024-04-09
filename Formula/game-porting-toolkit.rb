@@ -31,11 +31,10 @@ class GamePortingToolkit < Formula
   depends_on "gettext"
   depends_on "gnutls"
   depends_on "gstreamer"
+  depends_on :macos
   depends_on "sdl2"
 
   uses_from_macos "flex" => :build
-
-  depends_on :macos
 
   resource "gecko-x86" do
     url "https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86.tar.xz"
