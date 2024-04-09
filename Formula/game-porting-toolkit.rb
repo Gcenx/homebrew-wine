@@ -19,7 +19,6 @@ class GamePortingToolkit < Formula
     root_url "https://github.com/Gcenx/homebrew-wine/releases/download/game-porting-toolkit-1.1"
     sha256 monterey: "0094bdb2cc0f2be6341fb0470a618e27f1f034c95779e85ad534fd86fa1759be"
   end
-  depends_on :macos
 
   keg_only :versioned_formula
 
@@ -35,6 +34,8 @@ class GamePortingToolkit < Formula
   depends_on "sdl2"
 
   uses_from_macos "flex" => :build
+
+  depends_on :macos
 
   resource "gecko-x86" do
     url "https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86.tar.xz"
