@@ -19,10 +19,14 @@ class Wine < Formula
   depends_on "gettext"
   depends_on "gnutls"
   depends_on "gstreamer"
-  depends_on "libinotify-kqueue" :macos
   depends_on "sdl2"
 
   uses_from_macos "flex" => :build
+
+  on_macos do
+    depends_on "libinotify-kqueue"
+    depends_on "molten-vk"
+  end
 
   resource "gecko-x86" do
     url "https://dl.winehq.org/wine/wine-gecko/2.47.4/wine-gecko-2.47.4-x86.tar.xz"
