@@ -9,7 +9,8 @@ class Wine < Formula
   homepage "https://www.winehq.org/"
   url "https://dl.winehq.org/wine/source/9.0/wine-9.0.tar.xz"
   sha256 "7cfd090a5395f5b76d95bb5defac8a312c8de4c070c1163b8b58da38330ca6ee"
-  head "https://gitlab.winehq.org/wine/wine.git"
+  head "https://gitlab.winehq.org/wine/wine.git",
+    branch: "master"
 
   depends_on "bison" => :build
   depends_on "mingw-w64" => :build
