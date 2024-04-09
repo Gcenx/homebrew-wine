@@ -56,7 +56,7 @@ class Wine < Formula
 
     wine_configure_options = ["--prefix=#{prefix}",
                               "--enable-win64",
-                              "--arch=i386,x86_64",
+                              "--arch=#{"i386,x86_64"}",
                               "--disable-tests",
                               "--without-alsa",
                               "--without-capi",
