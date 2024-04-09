@@ -8,8 +8,8 @@ class Wine < Formula
   desc "Run Windows applications without a copy of Microsoft Windows"
   homepage "https://www.winehq.org/"
   url "https://dl.winehq.org/wine/source/9.0/wine-9.0.tar.xz"
-  sha256 "cdfe282ce33788bd4f969c8bfb1d3e2de060eb6c296fa1c3cdf4e4690b8b1831"
-  head "https://source.winehq.org/git/wine.git"
+  sha256 "7cfd090a5395f5b76d95bb5defac8a312c8de4c070c1163b8b58da38330ca6ee"
+  head "https://gitlab.winehq.org/wine/wine.git"
 
   depends_on "bison" => :build
   depends_on "mingw-w64" => :build
@@ -30,12 +30,12 @@ class Wine < Formula
 
   resource "gecko-x86" do
     url "https://dl.winehq.org/wine/wine-gecko/2.47.4/wine-gecko-2.47.4-x86.tar.xz"
-    sha256 "8fab46ea2110b2b0beed414e3ebb4e038a3da04900e7a28492ca3c3ccf9fea94"
+    sha256 "2cfc8d5c948602e21eff8a78613e1826f2d033df9672cace87fed56e8310afb6"
   end
 
   resource "gecko-x86_64" do
     url "https://dl.winehq.org/wine/wine-gecko/2.47.4/wine-gecko-2.47.4-x86_64.tar.xz"
-    sha256 "b4476706a4c3f23461da98bed34f355ff623c5d2bb2da1e2fa0c6a310bc33014"
+    sha256 "fd88fc7e537d058d7a8abf0c1ebc90c574892a466de86706a26d254710a82814"
   end
 
   def install
@@ -86,7 +86,7 @@ class Wine < Formula
                               "--with-unwind",
                               "--without-usb",
                               "--without-v4l2",
-                              "--without-vulkan",
+                              "--with-vulkan",
                               "--without-x"]
 
     # Build
@@ -99,6 +99,7 @@ class Wine < Formula
     cd "wine64-build" do
       system "make", "install-lib"
     end
+  end
 
   def post_install
     # Homebrew replaces wine's rpath names with absolute paths, we need to change them back to @rpath relative paths
