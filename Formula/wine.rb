@@ -57,9 +57,9 @@ class Wine < Formula
     ENV["MACOSX_DEPLOYMENT_TARGET"] = "10.14"
 
     wine_configure_options = ["--prefix=#{prefix}",
-                              "--enable-win64",
-                              "--enable-archs=(i386,x86_64)",
                               "--disable-tests",
+                              "--enable-archs=i386,x86_64",
+                              "--enable-win64",
                               "--without-alsa",
                               "--without-capi",
                               "--with-coreaudio",
