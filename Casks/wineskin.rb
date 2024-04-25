@@ -1,6 +1,6 @@
 cask "wineskin" do
-  version "2.0.1"
-  sha256 "1dbbc539f9a2263d6d7725e3a8057b4a06240ec043260cce9feb6609900e9e0e"
+  version "2.0.2"
+  sha256 "51e088f5c22deadd60069656e91fd98c4a5855492bca1038b5753bd251df9981"
 
   url "https://github.com/The-Wineskin-Project/Winery/releases/download/#{version}/wineskin-winery-v#{version}.tar.xz"
   name "Wineskin Winery"
