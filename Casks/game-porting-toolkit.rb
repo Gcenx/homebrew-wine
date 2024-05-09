@@ -15,9 +15,9 @@ cask "game-porting-toolkit" do
 
   conflicts_with cask: %w[
     wine-crossover
-    wine-devel
+    wine@devel
     wine-stable
-    wine-staging
+    wine@staging
   ]
   depends_on cask: "gstreamer-runtime"
   depends_on macos: ">= :sonoma"
