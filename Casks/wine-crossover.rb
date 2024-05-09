@@ -15,8 +15,8 @@ cask "wine-crossover" do
   conflicts_with cask: %w[
     game-porting-toolkit
     wine-stable
-    wine-devel
-    wine-staging
+    wine@devel
+    wine@staging
   ]
   depends_on macos: ">= :catalina"
 
