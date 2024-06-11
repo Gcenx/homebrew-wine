@@ -1,8 +1,8 @@
 cask "game-porting-toolkit" do
-  version "1.1"
-  sha256 "122b1730ee0aedd1791b398fb251593b6edf3426f5dae2d3bc6188c37779e26b"
+  version "2.0-beta1"
+  sha256 "20baa41ef487c56ad1c333e2fbcd03adc851902d89b9d22fa66d9c6072a846dc"
 
-  url "https://github.com/Gcenx/game-porting-toolkit/releases/download/Game-Porting-Toolkit-#{version}-gstreamer/game-porting-toolkit-#{version}.tar.xz",
+  url "https://github.com/Gcenx/game-porting-toolkit/releases/download/Game-Porting-Toolkit-#{version}/game-porting-toolkit-#{version}.tar.xz",
       verified: "github.com/Gcenx/game-porting-toolkit/"
   name "Game Porting Toolkit"
   desc "Use to eliminate months of up-front work and evaluate how well your game runs"
