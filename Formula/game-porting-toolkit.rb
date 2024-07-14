@@ -1,19 +1,8 @@
-# The 22.1.1 tarball contains an empty sources/freetype directory, which confuses the default CurlDownloadStrategy.
-# A custom strategy also allows us to restrict extraction to just wine.
-class TarballDownloadStrategy < CurlDownloadStrategy
-  def stage
-    ohai "Staging #{cached_location} in #{pwd}"
-    system "tar", "-xf", cached_location, "--include=sources/wine/*", "--strip-components=2"
-    yield
-  end
-end
-
 class GamePortingToolkit < Formula
   desc "Apple Game Porting Toolkit"
   homepage "https://developer.apple.com/"
-  url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.1.tar.gz", using: TarballDownloadStrategy
-  version "1.1"
-  sha256 "cdfe282ce33788bd4f969c8bfb1d3e2de060eb6c296fa1c3cdf4e4690b8b1831"
+  url "https://github.com/The-Wineskin-Project/wine/archive/refs/heads/Game-Porting-Toolkit-1.1-Fixup.tar.gz"
+  sha256 "bfaa71e578bdaf19258f6533684f169f74c88ae9b1037465f3051e19c1f25ecd"
 
   bottle do
     root_url "https://github.com/Gcenx/homebrew-wine/releases/download/game-porting-toolkit-1.1"
@@ -29,6 +18,7 @@ class GamePortingToolkit < Formula
   depends_on arch: :x86_64
   depends_on "freetype"
   depends_on "gettext"
+  depends_on "glib"
   depends_on "gnutls"
   depends_on "gstreamer"
   depends_on :macos
@@ -46,35 +36,9 @@ class GamePortingToolkit < Formula
     sha256 "b4476706a4c3f23461da98bed34f355ff623c5d2bb2da1e2fa0c6a310bc33014"
   end
 
-  # Getting patchs from my winecx mirror
-  # Game Porting Toolkit 1.0 (beta 1)
   patch do
-    url "https://github.com/Gcenx/winecx/commit/ab4973d083af65dcd6dfd942ce962e41a24c00ca.patch?full_index=1"
-    sha256 "085c8d6762c899b7d1f8ab304aaffbf9f0b21c589d0ba24047625eb9d7af456b"
-  end
-
-  # Game Porting Toolkit 1.0 (beta 2)
-  patch do
-    url "https://github.com/Gcenx/winecx/commit/2da8f1b28ab80fa1f5b06280c2df179efbe79acc.patch?full_index=1"
-    sha256 "cacbf7f05dc8a355b8136279ef5f47a83cfa5dd7b2aa04e67f62ee8437ab9df7"
-  end
-
-  # Game Porting Toolkit 1.0 (beta 3)
-  patch do
-    url "https://github.com/Gcenx/winecx/commit/1e0b0fddce1c762c4504c948d198ec4e95d4d6c9.patch?full_index=1"
-    sha256 "d9375141b843f6281df081becc3cfd777c425c5ebb140a87ce450cb7d9e0a4b9"
-  end
-
-  # Game Porting Toolkit 1.0 (beta 4)
-  patch do
-    url "https://github.com/Gcenx/winecx/commit/b6c79917506b438217aa2eaea3b13b9acf9e1c81.patch?full_index=1"
-    sha256 "0bcd8b2e407b16dc0db795cf132e179e952ab0da6f1b4c1824abd13e7975c2c3"
-  end
-
-  # Game Porting Toolkit 1.1
-  patch do
-    url "https://github.com/Gcenx/winecx/commit/2e232b59da4612f2f131bd2f690d70d8fbdf9b87.patch?full_index=1"
-    sha256 "073165eb8f19e3cfcceca5b3279214ea977e6f2d4275464cd17e7509a4f2733c"
+    url "https://raw.githubusercontent.com/Gcenx/macports-wine/daba9fb681127057c716bffd86f4c7d78da4b025/devel/game-porting-toolkit/files/1006-build_fixes.diff"
+    sha256 "0fe0c90b1d2f57a3ad0d1b1d1924cdfebf1c362ca8ac4ff2adb864209d0a44c5"
   end
 
   def install
@@ -84,13 +48,16 @@ class GamePortingToolkit < Formula
     compiler_options = ["CC=#{compiler.bin}/clang",
                         "CXX=#{compiler.bin}/clang++"]
 
+    # Compiler flags for PE binaries.
+    ENV.append "CROSSCFLAGS", "-O3 -Wno-error=incompatible-pointer-types -Wno-error=int-conversion"
+
     # We also need to tell the linker to add Homebrew to the rpath stack.
     ENV.append "LDFLAGS", "-lSystem"
     ENV.append "LDFLAGS", "-L#{HOMEBREW_PREFIX}/lib"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{HOMEBREW_PREFIX}/lib"
     ENV.append "LDFLAGS", "-Wl,-rpath,@executable_path/../lib/external"
 
-    # Common compiler flags for both Mach-O and PE binaries.
+    # Compiler flags for Mach-O binaries.
     ENV.append_to_cflags "-O3 -Wno-deprecated-declarations -Wno-incompatible-pointer-types"
     # Use an older deployment target to avoid new dyld behaviors.
     # The custom compiler is too old to accept "13.0", so we use "10.14".
