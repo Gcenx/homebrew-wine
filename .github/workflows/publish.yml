@@ -31,4 +31,4 @@ jobs:
         if: github.event.pull_request.head.repo.fork == false
         env:
           BRANCH: ${{ github.event.pull_request.head.ref }}
-        run: git push --delete origin $BRANCH
+        run: git push --delete origin "$BRANCH"
