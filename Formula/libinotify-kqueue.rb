@@ -5,6 +5,7 @@ class LibinotifyKqueue < Formula
     tag:      "20211018",
     revision: "ea7835fcafc3cee2a0d6c0e3c8034962c48f6afe"
   license "MIT"
+  revision 1
   head "https://github.com/libinotify-kqueue/libinotify-kqueue.git",
     branch: "master"
 
