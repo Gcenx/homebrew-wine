@@ -62,6 +62,10 @@ class CxLlvm < Formula
     end
   end
 
+  def post_install
+    rm_f lib/"libLTO.dylib"
+  end
+
   test do
     system "#{bin}/clang", "--version"
   end
