@@ -4,6 +4,7 @@ class CxLlvm < Formula
   url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.1.tar.gz"
   sha256 "cdfe282ce33788bd4f969c8bfb1d3e2de060eb6c296fa1c3cdf4e4690b8b1831"
   license "NCSA"
+  revision 1
 
   bottle do
     root_url "https://github.com/Gcenx/homebrew-wine/releases/download/cx-llvm-22.1.1"
