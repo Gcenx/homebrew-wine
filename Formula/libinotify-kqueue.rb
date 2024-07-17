@@ -10,8 +10,8 @@ class LibinotifyKqueue < Formula
     branch: "master"
 
   bottle do
-    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/libinotify-kqueue-20211018"
-    sha256 cellar: :any, monterey: "c57f064ad92d084d4c3b0f92d5714d1d0942c944a5f334379ce5fdac801627d6"
+    root_url "https://github.com/Gcenx/homebrew-wine/releases/download/libinotify-kqueue-20211018_1"
+    sha256 cellar: :any, ventura: "3000eeab47d7c30b4887f264d1b07527791d38ee5cf3d65beb5869261fb9f115"
   end
 
   depends_on "autoconf" => :build
