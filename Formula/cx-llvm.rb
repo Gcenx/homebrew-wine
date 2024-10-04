@@ -63,7 +63,7 @@ class CxLlvm < Formula
   end
 
   def post_install
-    rm_f lib/"libLTO.dylib"
+    rm lib/"libLTO.dylib"
   end
 
   test do
