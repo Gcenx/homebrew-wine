@@ -1,6 +1,6 @@
 cask "game-porting-toolkit" do
-  version "2.0-beta1"
-  sha256 "20baa41ef487c56ad1c333e2fbcd03adc851902d89b9d22fa66d9c6072a846dc"
+  version "2.0-beta3"
+  sha256 "05a7b3b674921bc8262a546059d1ab2deecba16426bdfe9f7462ad46eb426cbf"
 
   url "https://github.com/Gcenx/game-porting-toolkit/releases/download/Game-Porting-Toolkit-#{version}/game-porting-toolkit-#{version}.tar.xz",
       verified: "github.com/Gcenx/game-porting-toolkit/"
@@ -19,12 +19,9 @@ cask "game-porting-toolkit" do
     wine-stable
     wine@staging
   ]
-  depends_on cask: "gstreamer-runtime"
   depends_on macos: ">= :sonoma"
 
   app "Game Porting Toolkit.app"
-  binary "#{appdir}/Game Porting Toolkit.app/Contents/Resources/wine/bin/wine"
-  binary "#{appdir}/Game Porting Toolkit.app/Contents/Resources/wine/bin/wine-preloader"
   binary "#{appdir}/Game Porting Toolkit.app/Contents/Resources/wine/bin/wine64"
   binary "#{appdir}/Game Porting Toolkit.app/Contents/Resources/wine/bin/wine64-preloader"
   binary "#{appdir}/Game Porting Toolkit.app/Contents/Resources/wine/bin/wineserver"
