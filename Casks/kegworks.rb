@@ -14,7 +14,6 @@ cask "kegworks" do
   postflight do
     system "/usr/bin/xattr", "-drs", "com.apple.quarantine", "#{appdir}/Kegworks Winery.app"
     system "/usr/bin/codesign", "--force", "--deep", "-s", "-", "#{appdir}/Kegworks Winery.app"
-    system_command "/bin/mkdir", args: ["-p", "/Users/#{ENV.fetch("USER")}/Applications/Kegworks"], sudo: false
   end
 
   zap trash: [
