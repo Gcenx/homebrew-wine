@@ -1,6 +1,6 @@
 cask "game-porting-toolkit" do
-  version "2.0-beta3"
-  sha256 "05a7b3b674921bc8262a546059d1ab2deecba16426bdfe9f7462ad46eb426cbf"
+  version "2.1"
+  sha256 "6a70069a977d59d8c4b7f9f29eee03c7ba75434cf22c016d342502ef7096a13b"
 
   url "https://github.com/Gcenx/game-porting-toolkit/releases/download/Game-Porting-Toolkit-#{version}/game-porting-toolkit-#{version}.tar.xz",
       verified: "github.com/Gcenx/game-porting-toolkit/"
