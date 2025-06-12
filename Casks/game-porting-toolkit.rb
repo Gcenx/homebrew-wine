@@ -1,17 +1,28 @@
 cask "game-porting-toolkit" do
-  version "2.1"
-  sha256 "6a70069a977d59d8c4b7f9f29eee03c7ba75434cf22c016d342502ef7096a13b"
+  on_sonoma :or_older do
+    version "2.1"
+    sha256 "6a70069a977d59d8c4b7f9f29eee03c7ba75434cf22c016d342502ef7096a13b"
+
+    livecheck do
+      skip "Legacy version"
+    end
+  do
+
+  on_sequoia :or_newer do
+    version "3.0-beta1"
+    sha256 "2ed533de71b8f5a244e93e80e6ec6ca4c496482ba9adcbe5df15466afa792ea9"
+
+    livecheck do
+      url :url
+      strategy :github_releases
+    end
+  end
 
   url "https://github.com/Gcenx/game-porting-toolkit/releases/download/Game-Porting-Toolkit-#{version}/game-porting-toolkit-#{version}.tar.xz",
       verified: "github.com/Gcenx/game-porting-toolkit/"
   name "Game Porting Toolkit"
   desc "Use to eliminate months of up-front work and evaluate how well your game runs"
   homepage "https://developer.apple.com/games"
-
-  livecheck do
-    url :url
-    strategy :github_releases
-  end
 
   conflicts_with cask: %w[
     wine-crossover
