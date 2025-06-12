@@ -7,7 +7,6 @@ cask "game-porting-toolkit" do
       skip "Legacy version"
     end
   end
-
   on_sequoia :or_newer do
     version "3.0-beta1"
     sha256 "2ed533de71b8f5a244e93e80e6ec6ca4c496482ba9adcbe5df15466afa792ea9"
