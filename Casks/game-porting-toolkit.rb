@@ -6,7 +6,7 @@ cask "game-porting-toolkit" do
     livecheck do
       skip "Legacy version"
     end
-  do
+  end
 
   on_sequoia :or_newer do
     version "3.0-beta1"
