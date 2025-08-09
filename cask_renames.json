@@ -1,5 +1,3 @@
 {
-  "gstreamer-framework": "gstreamer-runtime",
-  "unofficial-wineskin": "wineskin",
-  "wineskin": "kegworks"
+  "gstreamer-framework": "gstreamer-runtime"
 }
