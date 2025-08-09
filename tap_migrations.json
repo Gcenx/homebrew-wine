@@ -1,4 +1,3 @@
 {
-  "gstreamer-runtime": "homebrew/cask",
-  "kegworks": "Kegworks-App/kegworks"
+  "gstreamer-runtime": "homebrew/cask"
 }
