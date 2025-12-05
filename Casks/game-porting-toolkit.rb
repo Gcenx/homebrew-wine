@@ -15,8 +15,8 @@ cask "game-porting-toolkit" do
 
   conflicts_with cask: [
     "wine-crossover",
-    "wine@devel",
     "wine-stable",
+    "wine@devel",
     "wine@staging",
   ]
   depends_on macos: ">= :sonoma"
