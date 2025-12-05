@@ -14,7 +14,7 @@ cask "game-porting-toolkit" do
   end
 
   conflicts_with cask: [
-    "wine-crossover","
+    "wine-crossover",
     "wine@devel",
     "wine-stable",
     "wine@staging",
