@@ -12,11 +12,11 @@ cask "wine-crossover" do
     strategy :github_releases
   end
 
-  conflicts_with cask: %w[
-    game-porting-toolkit
-    wine-stable
-    wine@devel
-    wine@staging
+  conflicts_with cask: [
+    "game-porting-toolkit",
+    "wine-stable",
+    "wine@devel",
+    "wine@staging",
   ]
   depends_on macos: ">= :catalina"
 
