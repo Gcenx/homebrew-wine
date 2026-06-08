@@ -19,7 +19,7 @@ cask "game-porting-toolkit" do
     "wine@devel",
     "wine@staging",
   ]
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Game Porting Toolkit.app"
   binary "#{appdir}/Game Porting Toolkit.app/Contents/Resources/wine/bin/wine64"
