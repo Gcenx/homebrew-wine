@@ -2,8 +2,7 @@ cask "game-porting-toolkit" do
   version "3.0-2"
   sha256 "c16b3b40b9a34853fc1f4546d13d20d28bc06e0f2edcfcf425df2ef7f2ec4ba4"
 
-  url "https://github.com/Gcenx/game-porting-toolkit/releases/download/Game-Porting-Toolkit-#{version}/game-porting-toolkit-#{version}.tar.xz",
-      verified: "github.com/Gcenx/game-porting-toolkit/"
+  url "https://github.com/Gcenx/game-porting-toolkit/releases/download/Game-Porting-Toolkit-#{version}/game-porting-toolkit-#{version}.tar.xz"
   name "Game Porting Toolkit"
   desc "Use to eliminate months of up-front work and evaluate how well your game runs"
   homepage "https://developer.apple.com/games"
