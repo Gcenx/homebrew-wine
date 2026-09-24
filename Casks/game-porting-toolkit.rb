@@ -29,6 +29,22 @@ cask "game-porting-toolkit" do
     run "/usr/bin/xattr",
         args: ["-drs", "com.apple.quarantine", "{{appdir}}/Game Porting Toolkit.app"]
 
+    # The tarball ships the same unix ntdll.so twice, in x86_64-unix and in
+    # x86_32on64-unix. The two files are the same build (they differ only in
+    # LC_UUID, a few load-command bytes and the code signature; no __TEXT byte
+    # differs), but dyld keys images by path, so a 32-bit process loads both and
+    # gets two independent copies of ntdll's statics. virtual_init() only runs in
+    # one of them, leaving the other with pages_vprot == NULL and
+    # pages_vprot_size == 0. winecoreaudio.so links @rpath/ntdll.so with an
+    # @loader_path rpath, so it binds to the uninitialised copy and every
+    # allocation made on a CoreAudio callback thread aborts in alloc_pages_vprot.
+    # That is why 32-bit games die during audio initialisation.
+    # Replacing the duplicate with a symlink makes dyld reuse the single
+    # already-initialised image.
+    run "/bin/ln",
+        args: ["-sfh", "../x86_64-unix/ntdll.so",
+               "{{appdir}}/Game Porting Toolkit.app/Contents/Resources/wine/lib/wine/x86_32on64-unix/ntdll.so"]
+
     run "/usr/bin/codesign",
         args: ["--force", "--deep", "-s", "-", "{{appdir}}/Game Porting Toolkit.app"]
   end
